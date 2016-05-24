@@ -1,6 +1,11 @@
 MDFTextAccessibility assists in selecting text colors that will meet the
 [W3C standards for accessibility](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html).
 
+*May 24, 2016: We're still staging MDFTextAccessibility, feel free to poke
+around, but non-code things like CocoaPods support and continuous integration
+testing will be ramping up over the next few weeks. The API is relatively stable
+at this point.*
+
 ## Accessibility of text
 
 Apps created for the widest range of users should ensure that users can read
