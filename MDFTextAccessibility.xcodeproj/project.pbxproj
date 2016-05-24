@@ -11,8 +11,8 @@
 		0B2890E91CE2732B009E605A /* MDFTextAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */; };
 		0BDAE3D81CECC649003323B9 /* NSArray+MDFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D71CECC649003323B9 /* NSArray+MDFUtils.m */; };
 		0BDAE3DA1CECD231003323B9 /* MDFImageCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */; };
-		0BDAE3E31CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3E21CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.swift */; };
 		0BDAE3E51CECD3A6003323B9 /* libMDFTextAccessibility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */; };
+		0BF99E7A1CF4F39200E6F9B9 /* MDFTextAccessibilityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +52,10 @@
 		0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFImageCalculations.m; sourceTree = "<group>"; };
 		0BDAE3DB1CECD256003323B9 /* MDFImageCalculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFImageCalculations.h; sourceTree = "<group>"; };
 		0BDAE3E01CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDFTextAccessibilityUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0BDAE3E21CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDFTextAccessibilityUnitTests.swift; sourceTree = "<group>"; };
 		0BDAE3E41CECD3A6003323B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDAE3EB1CECD4BC003323B9 /* MDFTextAccessibility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-Bridging-Header.h"; sourceTree = "<group>"; };
 		0BDAE3EE1CECD7E2003323B9 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFTextAccessibilityUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,16 +93,9 @@
 		0B1450FA1CE373B70087403D /* tests */ = {
 			isa = PBXGroup;
 			children = (
-				0B1450FB1CE373C00087403D /* unit */,
+				0BDAE3E11CECD3A6003323B9 /* unit */,
 			);
 			path = tests;
-			sourceTree = "<group>";
-		};
-		0B1450FB1CE373C00087403D /* unit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = unit;
 			sourceTree = "<group>";
 		};
 		0B2890D21CE27291009E605A = {
@@ -114,7 +107,6 @@
 				0B06FEEB1CE3908C00244A36 /* README.md */,
 				0B2890E11CE2730C009E605A /* src */,
 				0B1450FA1CE373B70087403D /* tests */,
-				0BDAE3E11CECD3A6003323B9 /* MDFTextAccessibilityUnitTests */,
 				0B2890E01CE2730C009E605A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -140,13 +132,13 @@
 			path = src;
 			sourceTree = SOURCE_ROOT;
 		};
-		0BDAE3E11CECD3A6003323B9 /* MDFTextAccessibilityUnitTests */ = {
+		0BDAE3E11CECD3A6003323B9 /* unit */ = {
 			isa = PBXGroup;
 			children = (
-				0BDAE3E21CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.swift */,
+				0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */,
 				0BDAE3E41CECD3A6003323B9 /* Info.plist */,
 			);
-			path = MDFTextAccessibilityUnitTests;
+			path = unit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +185,7 @@
 		0B2890D31CE27291009E605A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				TargetAttributes = {
 					0B2890DE1CE2730C009E605A = {
@@ -248,7 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDAE3E31CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.swift in Sources */,
+				0BF99E7A1CF4F39200E6F9B9 /* MDFTextAccessibilityUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +313,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = src/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -328,6 +321,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -363,12 +358,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = src/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -409,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = MDFTextAccessibilityUnitTests/Info.plist;
+				INFOPLIST_FILE = tests/unit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -454,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = MDFTextAccessibilityUnitTests/Info.plist;
+				INFOPLIST_FILE = tests/unit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
