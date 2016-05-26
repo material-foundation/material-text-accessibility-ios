@@ -139,14 +139,6 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
   return MDFMinAlphaOfColorOnBackgroundColor(textColor, backgroundColor, minContrastRatio);
 }
 
-#pragma mark - Private methods
-
-+ (CGFloat)luminanceOfColor:(UIColor *)color {
-  CGFloat colorComponents[4];
-  MDFCopyRGBAComponents(color.CGColor, colorComponents);
-  return MDFRelativeLuminanceOfRGBComponents(colorComponents);
-}
-
 + (CGFloat)contrastRatioForTextColor:(UIColor *)textColor
                    onBackgroundColor:(UIColor *)backgroundColor {
   CGFloat colorComponents[4];
@@ -160,6 +152,14 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
   backgroundColorComponents[3] = 1;
 
   return MDFContrastRatioOfRGBAComponents(colorComponents, backgroundColorComponents);
+}
+
+#pragma mark - Private methods
+
++ (CGFloat)luminanceOfColor:(UIColor *)color {
+  CGFloat colorComponents[4];
+  MDFCopyRGBAComponents(color.CGColor, colorComponents);
+  return MDFRelativeLuminanceOfRGBComponents(colorComponents);
 }
 
 + (CGFloat)minContrastRatioForOptions:(MDFTextAccessibilityOptions)options {

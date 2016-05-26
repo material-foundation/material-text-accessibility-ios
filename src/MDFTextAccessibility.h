@@ -155,4 +155,14 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
              onBackgroundColor:(nonnull UIColor *)backgroundColor
                        options:(MDFTextAccessibilityOptions)options;
 
+/**
+ The contrast ratio of a text color when displayed on an opaque background color.
+
+ @param textColor A text color with optional transparency.
+ @param backgroundColor The opaque background color the text will be displayed on.
+ @return The contrast ratio of the text color on the background color.
+ */
++ (CGFloat)contrastRatioForTextColor:(nonnull UIColor *)textColor
+                   onBackgroundColor:(nonnull UIColor *)backgroundColor;
+
 @end
