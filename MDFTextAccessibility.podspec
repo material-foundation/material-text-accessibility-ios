@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.license      = "Apache 2.0"
   s.source       = { :git => "https://github.com/google/material-text-accessibility-ios.git", :tag => s.version.to_s }
   s.platform     = :ios, "7.0"
+
   s.requires_arc = true
   s.public_header_files = "src/*.h"
   s.source_files = "src/*.{h,m}", "src/private/*.{h,m}"

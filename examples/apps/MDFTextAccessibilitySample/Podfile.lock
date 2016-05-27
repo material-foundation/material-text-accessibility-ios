@@ -1,0 +1,14 @@
+PODS:
+  - MDFTextAccessibility (1.0.0)
+
+DEPENDENCIES:
+  - MDFTextAccessibility (from `../../..`)
+
+EXTERNAL SOURCES:
+  MDFTextAccessibility:
+    :path: ../../..
+
+SPEC CHECKSUMS:
+  MDFTextAccessibility: 8235d42a2bfc5195c70528b5430be85b06080c10
+
+COCOAPODS: 0.39.0
