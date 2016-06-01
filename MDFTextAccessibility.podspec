@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.public_header_files = "src/*.h"
   s.source_files = "src/*.{h,m}", "src/private/*.{h,m}"
-  s.header_mappings_dir = "src/*"
+  s.header_mappings_dir = "src"
 end
 
