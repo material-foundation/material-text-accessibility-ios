@@ -42,7 +42,7 @@
 
   NSUInteger numElements = [self count];
   NSAssert([array count] == numElements, @"Array %@ must have length %lu.", array,
-            (unsigned long)numElements);
+           (unsigned long)numElements);
 
   // Create a permutation array by sorting self with comparator.
   NSMutableArray *permutation = [[NSMutableArray alloc] initWithCapacity:numElements];
