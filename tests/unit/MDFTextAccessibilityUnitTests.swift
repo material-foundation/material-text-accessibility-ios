@@ -111,25 +111,36 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
   }
 
   // MARK: Accessibility standard tests
+
   func testPassesStandards() {
     let backgroundColor = UIColor.whiteColor()
-    let grey60 = UIColor(white: 0, alpha: 0.6)  // Passes everything.
-    let grey50 = UIColor(white: 0, alpha: 0.5)  // Passes for large text only.
+    let grey70 = UIColor(white: 0, alpha: 0.7)  // Passes everything.
+    let grey60 = UIColor(white: 0, alpha: 0.6)  // Passes everything except normal text at level AAA.
+    let grey50 = UIColor(white: 0, alpha: 0.5)  // Only passes for large text at level AA.
     let grey40 = UIColor(white: 0, alpha: 0.4)  // Fails everything.
 
-    let tests = [
-      (MDFTextAccessibilityOptions.None, grey60, true),
-      (MDFTextAccessibilityOptions.None, grey50, false),
-      (MDFTextAccessibilityOptions.None, grey40, false),
-      (MDFTextAccessibilityOptions.LargeFont, grey60, true),
-      (MDFTextAccessibilityOptions.LargeFont, grey50, true),
-      (MDFTextAccessibilityOptions.LargeFont, grey40, false)
-    ]
+    // Normal text at the AA level, has to be above ~0.54.
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .None))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .None))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .None))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .None))
 
-    for test in tests {
-      XCTAssertEqual(MDFTextAccessibility.textColor(test.1,
-        passesOnBackgroundColor: backgroundColor,
-        options: test.0), test.2)
-    }
+    // Large text at the AA level, has to be above ~0.42.
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
+
+    // Normal text at the AAA level, has to be above ~0.67.
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
+
+    // Large text at the AAA level, has to be above ~0.54.
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
   }
 }

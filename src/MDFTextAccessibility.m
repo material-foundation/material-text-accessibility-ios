@@ -20,8 +20,10 @@
 #import "private/MDFImageCalculations.h"
 #import "private/NSArray+MDFUtils.h"
 
-static const CGFloat kMinLargeContrastRatio = 3.0f;
-static const CGFloat kMinNormalContrastRatio = 4.5f;
+static const CGFloat kMinContrastRatioNormalText = 4.5f;
+static const CGFloat kMinContrastRatioLargeText = 3.0f;
+static const CGFloat kMinContrastRatioNormalTextEnhanced = 7.0f;
+static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
 
 @implementation MDFTextAccessibility
 
@@ -161,9 +163,16 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
 }
 
 + (CGFloat)minContrastRatioForOptions:(MDFTextAccessibilityOptions)options {
-  return (options & MDFTextAccessibilityOptionsLargeFont) == MDFTextAccessibilityOptionsLargeFont
-             ? kMinLargeContrastRatio
-             : kMinNormalContrastRatio;
+  BOOL isLarge =
+      (options & MDFTextAccessibilityOptionsLargeFont) == MDFTextAccessibilityOptionsLargeFont;
+  BOOL isEnhanced = (options & MDFTextAccessibilityOptionsEnhancedContrast) ==
+                    MDFTextAccessibilityOptionsEnhancedContrast;
+
+  if (isEnhanced) {
+    return isLarge ? kMinContrastRatioLargeTextEnhanced : kMinContrastRatioNormalTextEnhanced;
+  } else {
+    return isLarge ? kMinContrastRatioLargeText : kMinContrastRatioNormalText;
+  }
 }
 
 + (BOOL)isLargeForContrastRatios:(UIFont *)font {
