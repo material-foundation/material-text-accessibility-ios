@@ -109,4 +109,27 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
 
     XCTAssertEqualWithAccuracy(minAlpha, minAlphaWithColorWithAlpha, accuracy: alphaEpsilon)
   }
+
+  // MARK: Accessibility standard tests
+  func testPassesStandards() {
+    let backgroundColor = UIColor.whiteColor()
+    let grey60 = UIColor(white: 0, alpha: 0.6)  // Passes everything.
+    let grey50 = UIColor(white: 0, alpha: 0.5)  // Passes for large text only.
+    let grey40 = UIColor(white: 0, alpha: 0.4)  // Fails everything.
+
+    let tests = [
+      (MDFTextAccessibilityOptions.None, grey60, true),
+      (MDFTextAccessibilityOptions.None, grey50, false),
+      (MDFTextAccessibilityOptions.None, grey40, false),
+      (MDFTextAccessibilityOptions.LargeFont, grey60, true),
+      (MDFTextAccessibilityOptions.LargeFont, grey50, true),
+      (MDFTextAccessibilityOptions.LargeFont, grey40, false)
+    ]
+
+    for test in tests {
+      XCTAssertEqual(MDFTextAccessibility.textColor(test.1,
+        passesOnBackgroundColor: backgroundColor,
+        options: test.0), test.2)
+    }
+  }
 }
