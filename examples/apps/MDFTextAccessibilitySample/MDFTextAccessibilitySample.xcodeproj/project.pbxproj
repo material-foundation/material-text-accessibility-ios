@@ -101,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B70BDD01CF6541C00C78D36 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilitySample" */;
 			buildPhases = (
-				C412B6C87BDE4D2B6B1CF19A /* 📦 Check Pods Manifest.lock */,
+				C412B6C87BDE4D2B6B1CF19A /* [CP] Check Pods Manifest.lock */,
 				0B70BDBA1CF6541C00C78D36 /* Sources */,
 				0B70BDBB1CF6541C00C78D36 /* Frameworks */,
 				0B70BDBC1CF6541C00C78D36 /* Resources */,
-				457B8C81531E0FA57A7339DF /* 📦 Embed Pods Frameworks */,
-				AC61D42B0C3BEBF8E7C70D21 /* 📦 Copy Pods Resources */,
+				457B8C81531E0FA57A7339DF /* [CP] Embed Pods Frameworks */,
+				AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,14 +164,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		457B8C81531E0FA57A7339DF /* 📦 Embed Pods Frameworks */ = {
+		457B8C81531E0FA57A7339DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,14 +179,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC61D42B0C3BEBF8E7C70D21 /* 📦 Copy Pods Resources */ = {
+		AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,14 +194,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C412B6C87BDE4D2B6B1CF19A /* 📦 Check Pods Manifest.lock */ = {
+		C412B6C87BDE4D2B6B1CF19A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
