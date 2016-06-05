@@ -1,4 +1,6 @@
-## No release as of yet
+## 1.0.0
+
+Initial release.
 
 ## x.x.x
 
