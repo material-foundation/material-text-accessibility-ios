@@ -74,12 +74,12 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
   // Sort by luminance if requested.
   if ((options & MDFTextAccessibilityOptionsPreferLighter) ||
       (options & MDFTextAccessibilityOptionsPreferDarker)) {
-    NSArray *luminances = [choices gos_arrayByMappingObjects:^id(id object) {
+    NSArray *luminances = [choices mdf_arrayByMappingObjects:^id(id object) {
       return @([self luminanceOfColor:object]);
     }];
 
     BOOL inverse = (options & MDFTextAccessibilityOptionsPreferDarker) ? YES : NO;
-    choices = [luminances gos_sortArray:choices
+    choices = [luminances mdf_sortArray:choices
                         usingComparator:^NSComparisonResult(id obj1, id obj2) {
                           float first = inverse ? [obj1 floatValue] : [obj2 floatValue];
                           float second = inverse ? [obj2 floatValue] : [obj1 floatValue];
