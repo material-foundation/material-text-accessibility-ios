@@ -1,3 +1,9 @@
+## 1.0.2
+
+##### Bug Fixes
+
+* Updated authors in the podspec to properly refer to Google.
+
 ## 1.0.1
 
 ##### Bug Fixes
