@@ -20,8 +20,10 @@
 #import "private/MDFImageCalculations.h"
 #import "private/NSArray+MDFUtils.h"
 
-static const CGFloat kMinLargeContrastRatio = 3.0f;
-static const CGFloat kMinNormalContrastRatio = 4.5f;
+static const CGFloat kMinContrastRatioNormalText = 4.5f;
+static const CGFloat kMinContrastRatioLargeText = 3.0f;
+static const CGFloat kMinContrastRatioNormalTextEnhanced = 7.0f;
+static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
 
 @implementation MDFTextAccessibility
 
@@ -35,7 +37,6 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
   return [self textColorOnBackgroundColor:backgroundCcolor
                           targetTextAlpha:targetTextAlpha
                                   options:options];
-
 }
 
 + (nullable UIColor *)textColorOnBackgroundImage:(nonnull UIImage *)backgroundImage
@@ -47,21 +48,20 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
     return nil;
   }
 
-  return [self textColorOnBackgroundColor:backgroundColor
-                          targetTextAlpha:targetTextAlpha
-                                     font:font];
+  return
+      [self textColorOnBackgroundColor:backgroundColor targetTextAlpha:targetTextAlpha font:font];
 }
 
 + (nullable UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundColor
                                  targetTextAlpha:(CGFloat)targetTextAlpha
                                          options:(MDFTextAccessibilityOptions)options {
-  NSArray *colors = @[ [UIColor colorWithWhite:1 alpha:targetTextAlpha],
-                       [UIColor colorWithWhite:0 alpha:targetTextAlpha] ];
-  UIColor *textColor = [self textColorFromChoices:colors
-                                onBackgroundColor:backgroundColor
-                                          options:options];
+  NSArray *colors = @[
+    [UIColor colorWithWhite:1 alpha:targetTextAlpha],
+    [UIColor colorWithWhite:0 alpha:targetTextAlpha]
+  ];
+  UIColor *textColor =
+      [self textColorFromChoices:colors onBackgroundColor:backgroundColor options:options];
   return textColor;
-
 }
 
 + (nullable UIColor *)textColorFromChoices:(nonnull NSArray<UIColor *> *)choices
@@ -71,20 +71,15 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
     NSAssert([obj isKindOfClass:[UIColor class]], @"Choices must be UIColors.");
   }];
 
-  NSArray *test = @[@"a", @"b"];
-  [test gos_arrayByMappingObjects:^id(id object) {
-    return @([object length]);
-  }];
-
   // Sort by luminance if requested.
   if ((options & MDFTextAccessibilityOptionsPreferLighter) ||
       (options & MDFTextAccessibilityOptionsPreferDarker)) {
-    NSArray *luminances = [choices gos_arrayByMappingObjects:^id(id object) {
+    NSArray *luminances = [choices mdf_arrayByMappingObjects:^id(id object) {
       return @([self luminanceOfColor:object]);
     }];
 
     BOOL inverse = (options & MDFTextAccessibilityOptionsPreferDarker) ? YES : NO;
-    choices = [luminances gos_sortArray:choices
+    choices = [luminances mdf_sortArray:choices
                         usingComparator:^NSComparisonResult(id obj1, id obj2) {
                           float first = inverse ? [obj1 floatValue] : [obj2 floatValue];
                           float second = inverse ? [obj2 floatValue] : [obj1 floatValue];
@@ -101,11 +96,9 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
 
   // Search the array for a color that can be used, adjusting alpha values upwards if requested.
   // The first acceptable color (adjusted or not) is returned.
-  CGFloat minContrastRatio = [self minContrastRatioForOptions:options];
   BOOL adjustAlphas = (options & MDFTextAccessibilityOptionsPreserveAlpha) ? NO : YES;
   for (UIColor *choice in choices) {
-    CGFloat ratio = [self contrastRatioForTextColor:choice onBackgroundColor:backgroundColor];
-    if (ratio >= minContrastRatio) {
+    if ([self textColor:choice passesOnBackgroundColor:backgroundColor options:options]) {
       return choice;
     }
 
@@ -114,9 +107,8 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
     }
 
     CGFloat alpha = CGColorGetAlpha(choice.CGColor);
-    CGFloat minAlpha = [self minAlphaOfTextColor:choice
-                               onBackgroundColor:backgroundColor
-                                         options:options];
+    CGFloat minAlpha =
+        [self minAlphaOfTextColor:choice onBackgroundColor:backgroundColor options:options];
     if (minAlpha > 0) {
       if (alpha > minAlpha) {
         NSAssert(NO,
@@ -154,6 +146,14 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
   return MDFContrastRatioOfRGBAComponents(colorComponents, backgroundColorComponents);
 }
 
++ (BOOL)textColor:(nonnull UIColor *)textColor
+    passesOnBackgroundColor:(nonnull UIColor *)backgroundColor
+                    options:(MDFTextAccessibilityOptions)options {
+  CGFloat minContrastRatio = [self minContrastRatioForOptions:options];
+  CGFloat ratio = [self contrastRatioForTextColor:textColor onBackgroundColor:backgroundColor];
+  return ratio >= minContrastRatio ? YES : NO;
+}
+
 #pragma mark - Private methods
 
 + (CGFloat)luminanceOfColor:(UIColor *)color {
@@ -163,9 +163,16 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
 }
 
 + (CGFloat)minContrastRatioForOptions:(MDFTextAccessibilityOptions)options {
-  return (options & MDFTextAccessibilityOptionsLargeFont) == MDFTextAccessibilityOptionsLargeFont ?
-      kMinLargeContrastRatio :
-      kMinNormalContrastRatio;
+  BOOL isLarge =
+      (options & MDFTextAccessibilityOptionsLargeFont) == MDFTextAccessibilityOptionsLargeFont;
+  BOOL isEnhanced = (options & MDFTextAccessibilityOptionsEnhancedContrast) ==
+                    MDFTextAccessibilityOptionsEnhancedContrast;
+
+  if (isEnhanced) {
+    return isLarge ? kMinContrastRatioLargeTextEnhanced : kMinContrastRatioNormalTextEnhanced;
+  } else {
+    return isLarge ? kMinContrastRatioLargeText : kMinContrastRatioNormalText;
+  }
 }
 
 + (BOOL)isLargeForContrastRatios:(UIFont *)font {
@@ -176,4 +183,3 @@ static const CGFloat kMinNormalContrastRatio = 4.5f;
 }
 
 @end
-

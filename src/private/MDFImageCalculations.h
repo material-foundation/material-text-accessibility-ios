@@ -22,10 +22,10 @@ extern "C" {
 
 /**
  Return the average color of an image in a particular region.
- 
+
  The region will be intersected with the image's bounds. If the resulting region is empty (or the
  input region was null) then this function returns nil.
- 
+
  @param image The image to examine.
  @param region The region of the image to average, or CGRectInfinite for the entire image.
  @return The average color, or nil if the region was invalid.

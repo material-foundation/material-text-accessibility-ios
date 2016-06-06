@@ -27,7 +27,7 @@ typedef id (^MDFMappingFunction)(id object);
  * @param function A block mapping an input element to an output element.
  * @return An array of the same size as self containing elements mapped through the function.
  */
-- (NSArray *)gos_arrayByMappingObjects:(MDFMappingFunction)function;
+- (NSArray *)mdf_arrayByMappingObjects:(MDFMappingFunction)function;
 
 /**
  * Returns a sorted version of |array| by using the passed comparator on self.
@@ -39,7 +39,7 @@ typedef id (^MDFMappingFunction)(id object);
  * NSArray *weights = @[ 100, 200, 50 ];
  * NSArray *dogs = @[ @"Bruno", @"Tiger", @"Spot" ];
  * NSComparator *ascending = ... NSString comparator ...
- * NSArray *sortedDogs = [weights gos_sortArray:dogs
+ * NSArray *sortedDogs = [weights mdf_sortArray:dogs
  *                              usingComparator:ascending];
  * // sortedDogs is @[ @"Spot", @"Bruno", @"Tiger" ].
  * @endcode
@@ -48,6 +48,6 @@ typedef id (^MDFMappingFunction)(id object);
  * @param comparator A comparator acting on elements of self.
  * @return A sorted copy of |array|.
  */
-- (NSArray *)gos_sortArray:(NSArray *)array usingComparator:(NSComparator)comparator;
+- (NSArray *)mdf_sortArray:(NSArray *)array usingComparator:(NSComparator)comparator;
 
 @end

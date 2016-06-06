@@ -18,7 +18,7 @@
 
 @implementation NSArray (MDFUtils)
 
-- (NSArray *)gos_arrayByMappingObjects:(MDFMappingFunction)function {
+- (NSArray *)mdf_arrayByMappingObjects:(MDFMappingFunction)function {
   NSAssert(function, @"Mapping block must not be NULL.");
   NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:[self count]];
   [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -27,22 +27,22 @@
   return [array copy];
 }
 
-- (BOOL)gos_anyObjectPassesTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate {
+- (BOOL)mdf_anyObjectPassesTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate {
   NSIndexSet *indices = [self indexesOfObjectsPassingTest:predicate];
   return [indices count] > 0;
 }
 
-- (BOOL)gos_allObjectsPassTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate {
+- (BOOL)mdf_allObjectsPassTest:(BOOL (^)(id obj, NSUInteger idx, BOOL *stop))predicate {
   NSIndexSet *indices = [self indexesOfObjectsPassingTest:predicate];
   return [indices count] == [self count];
 }
 
-- (NSArray *)gos_sortArray:(NSArray *)array usingComparator:(NSComparator)comparator {
+- (NSArray *)mdf_sortArray:(NSArray *)array usingComparator:(NSComparator)comparator {
   NSAssert(comparator, @"Comparator block must not be NULL.");
 
   NSUInteger numElements = [self count];
   NSAssert([array count] == numElements, @"Array %@ must have length %lu.", array,
-            (unsigned long)numElements);
+           (unsigned long)numElements);
 
   // Create a permutation array by sorting self with comparator.
   NSMutableArray *permutation = [[NSMutableArray alloc] initWithCapacity:numElements];

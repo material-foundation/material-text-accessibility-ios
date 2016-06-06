@@ -14,7 +14,7 @@
 		0B70BDD61CF65B3400C78D36 /* ColorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70BDD51CF65B3400C78D36 /* ColorsCollectionViewController.swift */; };
 		0B70BDD81CF663B100C78D36 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B70BDD71CF663B100C78D36 /* ColorCollectionViewCell.swift */; };
 		0BFC043A1CF7830C00567F1C /* ColorCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFC04391CF7830C00567F1C /* ColorCollectionViewHeader.swift */; };
-		786AC88001B2FA6D66B1615F /* Pods_MDFTextAccessibilitySample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 794BF2F1731F420BF451314B /* Pods_MDFTextAccessibilitySample.framework */; };
+		F849D7387CAE64E85D55003B /* Pods_MDFTextAccessibilitySample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEDF7C81A76FAF311AB1A07 /* Pods_MDFTextAccessibilitySample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		0B70BDD51CF65B3400C78D36 /* ColorsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewController.swift; sourceTree = "<group>"; };
 		0B70BDD71CF663B100C78D36 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		0BFC04391CF7830C00567F1C /* ColorCollectionViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewHeader.swift; sourceTree = "<group>"; };
-		794BF2F1731F420BF451314B /* Pods_MDFTextAccessibilitySample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDFTextAccessibilitySample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2E9F57FB5F55F817530CA93 /* Pods-MDFTextAccessibilitySample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDFTextAccessibilitySample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample.debug.xcconfig"; sourceTree = "<group>"; };
-		DCEB80C18CCF198560F70786 /* Pods-MDFTextAccessibilitySample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDFTextAccessibilitySample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample.release.xcconfig"; sourceTree = "<group>"; };
+		1AE1DC46C109323BE9E1BC97 /* Pods-MDFTextAccessibilitySample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDFTextAccessibilitySample.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample.release.xcconfig"; sourceTree = "<group>"; };
+		837EE15AAD1298DCA1BF2E20 /* Pods-MDFTextAccessibilitySample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDFTextAccessibilitySample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample.debug.xcconfig"; sourceTree = "<group>"; };
+		AAEDF7C81A76FAF311AB1A07 /* Pods_MDFTextAccessibilitySample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDFTextAccessibilitySample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786AC88001B2FA6D66B1615F /* Pods_MDFTextAccessibilitySample.framework in Frameworks */,
+				F849D7387CAE64E85D55003B /* Pods_MDFTextAccessibilitySample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,8 +49,8 @@
 			children = (
 				0B70BDC01CF6541C00C78D36 /* MDFTextAccessibilitySample */,
 				0B70BDBF1CF6541C00C78D36 /* Products */,
-				F051F2EBE5681179D06D96E6 /* Pods */,
-				F17396B388508919F5F4A8E9 /* Frameworks */,
+				E4FEF74BCDEE18EC2ECE4B38 /* Pods */,
+				EADA35B2A12AD4F156D27B04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,19 +77,19 @@
 			path = MDFTextAccessibilitySample;
 			sourceTree = "<group>";
 		};
-		F051F2EBE5681179D06D96E6 /* Pods */ = {
+		E4FEF74BCDEE18EC2ECE4B38 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D2E9F57FB5F55F817530CA93 /* Pods-MDFTextAccessibilitySample.debug.xcconfig */,
-				DCEB80C18CCF198560F70786 /* Pods-MDFTextAccessibilitySample.release.xcconfig */,
+				837EE15AAD1298DCA1BF2E20 /* Pods-MDFTextAccessibilitySample.debug.xcconfig */,
+				1AE1DC46C109323BE9E1BC97 /* Pods-MDFTextAccessibilitySample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F17396B388508919F5F4A8E9 /* Frameworks */ = {
+		EADA35B2A12AD4F156D27B04 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				794BF2F1731F420BF451314B /* Pods_MDFTextAccessibilitySample.framework */,
+				AAEDF7C81A76FAF311AB1A07 /* Pods_MDFTextAccessibilitySample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,12 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B70BDD01CF6541C00C78D36 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilitySample" */;
 			buildPhases = (
-				AEEFA8F198818455EFD2321B /* Check Pods Manifest.lock */,
+				C412B6C87BDE4D2B6B1CF19A /* [CP] Check Pods Manifest.lock */,
 				0B70BDBA1CF6541C00C78D36 /* Sources */,
 				0B70BDBB1CF6541C00C78D36 /* Frameworks */,
 				0B70BDBC1CF6541C00C78D36 /* Resources */,
-				C4300A1D4F3D3DEEA35570AF /* Embed Pods Frameworks */,
-				07F65B577F8020E83D7933E2 /* Copy Pods Resources */,
+				457B8C81531E0FA57A7339DF /* [CP] Embed Pods Frameworks */,
+				AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,14 +164,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07F65B577F8020E83D7933E2 /* Copy Pods Resources */ = {
+		457B8C81531E0FA57A7339DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,34 +194,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AEEFA8F198818455EFD2321B /* Check Pods Manifest.lock */ = {
+		C412B6C87BDE4D2B6B1CF19A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C4300A1D4F3D3DEEA35570AF /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -332,7 +332,7 @@
 		};
 		0B70BDD11CF6541C00C78D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2E9F57FB5F55F817530CA93 /* Pods-MDFTextAccessibilitySample.debug.xcconfig */;
+			baseConfigurationReference = 837EE15AAD1298DCA1BF2E20 /* Pods-MDFTextAccessibilitySample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MDFTextAccessibilitySample/Info.plist;
@@ -344,7 +344,7 @@
 		};
 		0B70BDD21CF6541C00C78D36 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCEB80C18CCF198560F70786 /* Pods-MDFTextAccessibilitySample.release.xcconfig */;
+			baseConfigurationReference = 1AE1DC46C109323BE9E1BC97 /* Pods-MDFTextAccessibilitySample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MDFTextAccessibilitySample/Info.plist;

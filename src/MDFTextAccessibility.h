@@ -32,6 +32,9 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
 
   /** Prefer lighter colors to darker colors. */
   MDFTextAccessibilityOptionsPreferLighter = 1 << 3,
+
+  /** Use enhanced constrast ratios (level AAA) instead of minimum ratios (level AA). */
+  MDFTextAccessibilityOptionsEnhancedContrast = 1 << 4,
 };
 
 /**
@@ -164,5 +167,20 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
  */
 + (CGFloat)contrastRatioForTextColor:(nonnull UIColor *)textColor
                    onBackgroundColor:(nonnull UIColor *)backgroundColor;
+
+/**
+ Whether a text color passes accessibility standards when displayed on an opaque background color.
+
+ MDFTextAccessibilityOptionsLargeFont and MDFTextAccessibilityOptionsEnhancedContrast are relevant
+ options for this method.
+
+ @param textColor A text color with optional transparency.
+ @param backgroundColor The opaque background color the text will be displayed on.
+ @param options A combination of MDFTextAccessibilityOptions values.
+ @return YES if the text color would meet accessibility standards.
+ */
++ (BOOL)textColor:(nonnull UIColor *)textColor
+    passesOnBackgroundColor:(nonnull UIColor *)backgroundColor
+                    options:(MDFTextAccessibilityOptions)options;
 
 @end
