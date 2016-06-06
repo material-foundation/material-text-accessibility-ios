@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "MDFTextAccessibility"
   s.version      = "1.0.0"
-  s.authors      = { 'Adrian Secord' => 'ajsecord@google.com' }
+  s.authors      = "Google Inc."
   s.summary      = "Accessibility tools for displaying text."
   s.homepage     = "https://github.com/google/material-text-accessibility-ios.git"
   s.license      = "Apache 2.0"
