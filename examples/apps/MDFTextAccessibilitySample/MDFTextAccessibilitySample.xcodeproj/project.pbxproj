@@ -101,12 +101,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B70BDD01CF6541C00C78D36 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilitySample" */;
 			buildPhases = (
+				31699BC6ECD347A75696EFB0 /* [CP] Check Pods Manifest.lock */,
 				C412B6C87BDE4D2B6B1CF19A /* [CP] Check Pods Manifest.lock */,
 				0B70BDBA1CF6541C00C78D36 /* Sources */,
 				0B70BDBB1CF6541C00C78D36 /* Frameworks */,
 				0B70BDBC1CF6541C00C78D36 /* Resources */,
 				457B8C81531E0FA57A7339DF /* [CP] Embed Pods Frameworks */,
 				AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */,
+				74063B709EA7196D10BF7470 /* 📦 Embed Pods Frameworks */,
+				BD0CDD49D379D3CA0F88B59D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +167,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		31699BC6ECD347A75696EFB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		457B8C81531E0FA57A7339DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +197,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		74063B709EA7196D10BF7470 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +220,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD0CDD49D379D3CA0F88B59D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
