@@ -41,12 +41,18 @@ private func randomRGBColor() -> UIColor {
 /** Set the textColor of a UILabel based on a target text alpha and a background color. */
 private func setLabelAccessibleTextColor(label: UILabel,
                                          targetTextAlpha: CGFloat,
+                                         preferLightText: Bool,
                                          onBackgroundColor backgroundColor: UIColor?) {
   if (backgroundColor != nil) {
+    let options : MDFTextAccessibilityOptions = [
+      MDFTextAccessibility.isLargeForContrastRatios(label.font) ? .LargeFont : .None,
+      preferLightText ? .PreferLighter : .PreferDarker
+    ]
+
     label.textColor =
       MDFTextAccessibility.textColorOnBackgroundColor(backgroundColor!,
                                                       targetTextAlpha: targetTextAlpha,
-                                                      font: label.font)
+                                                      options: options)
   }
 }
 
@@ -136,6 +142,7 @@ class ColorsCollectionViewController: UICollectionViewController {
     for label in labels {
       setLabelAccessibleTextColor(label,
                                   targetTextAlpha: colorChipSection.targetTextAlpha,
+                                  preferLightText: colorChipSection.prefersLightText,
                                   onBackgroundColor: cell.backgroundColor)
     }
 

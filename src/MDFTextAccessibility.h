@@ -183,4 +183,16 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
     passesOnBackgroundColor:(nonnull UIColor *)backgroundColor
                     options:(MDFTextAccessibilityOptions)options;
 
+/**
+ Whether a particular font would be considered "large" for the purposes of calculating
+ contrast ratios.
+
+ Large fonts are defined as greater than 18pt normal or 14pt bold. If the passed font is nil, then
+ this method returns NO.
+
+ @param font The font to examine, or nil.
+ @return YES if the font is non-nil and is considered "large".
+ */
++ (BOOL)isLargeForContrastRatios:(nullable UIFont *)font;
+
 @end

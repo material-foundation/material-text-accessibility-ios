@@ -143,4 +143,31 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
     XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
   }
+
+  // MARK: "Large" fonts.
+
+  func testNormalFontIsNotLarge() {
+    let font = UIFont.systemFontOfSize(14)
+    XCTAssertFalse(MDFTextAccessibility.isLargeForContrastRatios(font))
+  }
+
+  func testLargeFontIsLarge() {
+    let font = UIFont.systemFontOfSize(18)
+    XCTAssertTrue(MDFTextAccessibility.isLargeForContrastRatios(font))
+  }
+
+  func testSmallBoldFontIsNotLarge() {
+    let font = UIFont.boldSystemFontOfSize(13)
+    XCTAssertFalse(MDFTextAccessibility.isLargeForContrastRatios(font))
+  }
+
+  func testBoldFontIsLarge() {
+    let font = UIFont.boldSystemFontOfSize(14)
+    XCTAssertTrue(MDFTextAccessibility.isLargeForContrastRatios(font))
+  }
+  
+  func testNilFontIsNotLarge() {
+    XCTAssertFalse(MDFTextAccessibility.isLargeForContrastRatios(nil))
+  }
+
 }

@@ -101,6 +101,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B70BDD01CF6541C00C78D36 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilitySample" */;
 			buildPhases = (
+				77EB4CAE2CC44758B3B78076 /* 📦 Check Pods Manifest.lock */,
 				31699BC6ECD347A75696EFB0 /* [CP] Check Pods Manifest.lock */,
 				C412B6C87BDE4D2B6B1CF19A /* [CP] Check Pods Manifest.lock */,
 				0B70BDBA1CF6541C00C78D36 /* Sources */,
@@ -210,6 +211,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDFTextAccessibilitySample/Pods-MDFTextAccessibilitySample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77EB4CAE2CC44758B3B78076 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AC61D42B0C3BEBF8E7C70D21 /* [CP] Copy Pods Resources */ = {

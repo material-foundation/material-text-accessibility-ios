@@ -154,6 +154,13 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
   return ratio >= minContrastRatio ? YES : NO;
 }
 
++ (BOOL)isLargeForContrastRatios:(nullable UIFont *)font {
+  UIFontDescriptor *fontDescriptor = font.fontDescriptor;
+  BOOL isBold =
+      (fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold) == UIFontDescriptorTraitBold;
+  return font.pointSize >= 18 || (isBold && font.pointSize >= 14);
+}
+
 #pragma mark - Private methods
 
 + (CGFloat)luminanceOfColor:(UIColor *)color {
@@ -173,13 +180,6 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
   } else {
     return isLarge ? kMinContrastRatioLargeText : kMinContrastRatioNormalText;
   }
-}
-
-+ (BOOL)isLargeForContrastRatios:(UIFont *)font {
-  UIFontDescriptor *fontDescriptor = font.fontDescriptor;
-  BOOL isBold =
-      (fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold) == UIFontDescriptorTraitBold;
-  return font.pointSize >= 18 || (isBold && font.pointSize >= 14);
 }
 
 @end
