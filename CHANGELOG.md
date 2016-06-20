@@ -1,3 +1,10 @@
+## 1.1.0
+
+##### Enhancements
+
+* Added a `isLargeForContrastRatios:` advanced method to test a UIFont instance against the W3C's
+  definition of "large" text.
+
 ## 1.0.2
 
 ##### Bug Fixes
