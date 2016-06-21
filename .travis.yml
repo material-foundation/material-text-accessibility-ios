@@ -1,8 +1,6 @@
 language: objective-c
 osx_image: xcode7.3 
 sudo: false
-notifications:
-  email: false
 # Only fire off builds for specific branches.
 branches:
   only:
