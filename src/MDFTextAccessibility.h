@@ -33,7 +33,7 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
   /** Prefer lighter colors to darker colors. */
   MDFTextAccessibilityOptionsPreferLighter = 1 << 3,
 
-  /** Use enhanced constrast ratios (level AAA) instead of minimum ratios (level AA). */
+  /** Use enhanced contrast ratios (level AAA) instead of minimum ratios (level AA). */
   MDFTextAccessibilityOptionsEnhancedContrast = 1 << 4,
 };
 

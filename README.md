@@ -17,14 +17,14 @@ between foreground text colors and their background colors. The contrast ratio
 of two colors is a measurement of how much the brightness of two colors differ.
 For example, white on dark grey might have a contrast ratio of 9:1, while white
 on medium grey might only have a contrast ratio of 4:1. In general, larger
-constrast ratios are better and will ensure the widest range of users can easily
+contrast ratios are better and will ensure the widest range of users can easily
 read the text in your app.
 
 The [W3C](https://www.w3.org)'s
 [Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG/#visual-audio-contrast)
 contains two recommendations for text contrast ratios:
 
-1. Minimum constrast: text should have a contrast ratio of at least 4.5:1,
+1. Minimum contrast: text should have a contrast ratio of at least 4.5:1,
    except for "large" text, which can have a contrast ratio of 3:1.
 2. Enhanced contrast: text should have a contrast ratio of at least 7:1, except
    for large text, which can have a contrast ratio of 4.5:1.
@@ -34,7 +34,7 @@ least 14pt in a bold font face. For more information (including some important
 exceptions), see the
 [Guidelines](https://www.w3.org/TR/WCAG/#visual-audio-contrast).
 
-## Computing constrast ratios
+## Computing contrast ratios
 
 Computing acceptable contrast ratios involves the foreground color, the
 background color, the text size, and the transparency of the foreground color,
@@ -103,4 +103,3 @@ and black, see MDFTextAccessibility's
 ## License
 
 MDFTextAccessiblity is licensed under the [Apache License Version 2.0](LICENSE).
-
