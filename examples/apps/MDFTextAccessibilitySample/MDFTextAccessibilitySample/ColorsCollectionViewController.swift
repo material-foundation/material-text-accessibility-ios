@@ -57,7 +57,7 @@ private func setLabelAccessibleTextColor(label: UILabel,
 }
 
 /** A title containing a contrast ratio for a color ship. */
-private func constrastRatioTitle(prefix: String,
+private func contrastRatioTitle(prefix: String,
                                  textColor: UIColor,
                                  backgroundColor: UIColor) -> String {
   let ratio = MDFTextAccessibility.contrastRatioForTextColor(textColor,
@@ -148,10 +148,10 @@ class ColorsCollectionViewController: UICollectionViewController {
 
     cell.backgroundColorLabel.text = backgroundColorTitle("Background ",
                                                           backgroundColor:cell.backgroundColor!)
-    cell.largeTextLabel.text = constrastRatioTitle("Large text",
+    cell.largeTextLabel.text = contrastRatioTitle("Large text",
                                                    textColor:cell.largeTextLabel.textColor,
                                                    backgroundColor:cell.backgroundColor!)
-    cell.normalTextLabel.text = constrastRatioTitle("Normal text",
+    cell.normalTextLabel.text = contrastRatioTitle("Normal text",
                                                     textColor:cell.normalTextLabel.textColor,
                                                     backgroundColor:cell.backgroundColor!)
   }
