@@ -196,20 +196,22 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
   }
   
   func testWhiteBackgroundImage() {
+    let alpha:CGFloat = 1.0
     let image = UIImage.init(named: "100_100_white", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: 1, font: UIFont.boldSystemFontOfSize(13))
+    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: alpha, font: UIFont.boldSystemFontOfSize(13))
     let components = CGColorGetComponents(color?.CGColor)
     // 0 here for the first element in the components array represents a black color to give the most contrast against a fully white background image
     XCTAssertTrue(components[0] == 0)
-    XCTAssertTrue(components[1] == 1)
+    XCTAssertTrue(components[1] == alpha)
   }
   
   func testBlackBackgroundImage() {
+    let alpha:CGFloat = 1
     let image = UIImage.init(named: "100_100_black", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: 1, font: UIFont.boldSystemFontOfSize(13))
+    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: alpha, font: UIFont.boldSystemFontOfSize(13))
     let components = CGColorGetComponents(color?.CGColor)
     // 1 here for the first element in the components array represents a white color to give the most contrast against a fully black background image
     XCTAssertTrue(components[0] == 1)
-    XCTAssertTrue(components[1] == 1)
+    XCTAssertTrue(components[1] == alpha)
   }
 }
