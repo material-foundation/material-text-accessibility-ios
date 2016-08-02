@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "MDFTextAccessibility"
-  spec.version      = "1.1.0"
+  spec.version      = "1.1.1"
   spec.summary      = "MDFTextAccessibility assists in selecting text colors that meet the W3C standards for accessibility."
   spec.homepage     = "https://github.com/google/material-text-accessibility-ios"
   spec.license      = "Apache License, Version 2.0"

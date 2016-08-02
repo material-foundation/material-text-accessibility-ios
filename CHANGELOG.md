@@ -1,3 +1,11 @@
+## 1.1.1
+
+##### Enhancements
+
+* Added support for continuous code coverage analysis ([Sean O'Shea](https://github.com/seanoshea)).
+* Added unit tests for textColorOnBackgroundImage ([Sean O'Shea](https://github.com/seanoshea)).
+* Documentation clean ups ([Sean O'Shea](https://github.com/seanoshea)).
+
 ## 1.1.0
 
 ##### Enhancements
