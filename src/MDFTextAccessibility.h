@@ -56,7 +56,7 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
  @param font The font the text will use or nil.
  @return A color with acceptable contrast ratio for displaying text on |color|.
  */
-+ (nonnull UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundCcolor
++ (nonnull UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundColor
                                 targetTextAlpha:(CGFloat)targetTextAlpha
                                            font:(nullable UIFont *)font;
 

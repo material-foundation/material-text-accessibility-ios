@@ -27,14 +27,14 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
 
 @implementation MDFTextAccessibility
 
-+ (nonnull UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundCcolor
++ (nonnull UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundColor
                                 targetTextAlpha:(CGFloat)targetTextAlpha
                                            font:(nullable UIFont *)font {
   MDFTextAccessibilityOptions options = 0;
   if ([self isLargeForContrastRatios:font]) {
     options |= MDFTextAccessibilityOptionsLargeFont;
   }
-  return [self textColorOnBackgroundColor:backgroundCcolor
+  return [self textColorOnBackgroundColor:backgroundColor
                           targetTextAlpha:targetTextAlpha
                                   options:options];
 }

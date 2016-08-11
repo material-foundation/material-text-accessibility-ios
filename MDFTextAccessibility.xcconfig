@@ -1,0 +1,29 @@
+// https://pewpewthespells.com/blog/xcconfig_guide.html
+//
+// This list is derived from
+// http://programmers.stackexchange.com/questions/122608/clang-warning-flags-for-objective-c-development
+//
+// Overall warning settings: the 'all' and 'extra' classes plus convert warnings into errors.
+// -Wall,  // Standard known-to-be-bugs warnings.
+// -Wextra,  // Many useful extra warnings.
+// -Werror,  // All warnings as errors.
+// 
+// Deprecation support: without these one can't rationally deprecate things.
+// -Wno-error=deprecated,  // Deprecation warnings are never errors.
+// -Wno-error=deprecated-implementations,  // Deprecation warnings are never errors.
+// 
+// Useful warnings that are not in the 'all' and 'extra' classes.
+// -Wcast-align,  // Casting a pointer such that alignment is broken.
+// -Wconversion,  // Numeric conversion warnings.
+// -Wdocumentation,  // Warn when documentation is out of date.
+// -Wformat=2,  // Check printf-style format strings more strictly.
+// -Wimplicit-atomic-properties,  // Dynamic properties should be non-atomic.
+// -Wmissing-declarations,  // Warn if a global function is defined without a previous declaration.
+// -Wmissing-prototypes,  // Global function is defined without a previous prototype.
+// -Wno-unused-parameter,  // Do not warn on unused parameters.
+// -Woverlength-strings,  // Strings longer than the C maximum.
+// -Wshadow,  // Local variable shadows another variable, parameter, etc.
+// -Wstrict-selector-match,  // Compiler can't figure out the right selector.
+// -Wundeclared-selector,  // Compiler doesn't see a selector.
+// -Wunreachable-code,  // Code will never be reached.
+WARNING_CFLAGS = $(inherited) -Wall -Wextra -Werror -Wno-error=deprecated -Wno-error=deprecated-implementations -Wcast-align -Wconversion -Wdocumentation -Wformat=2 -Wimplicit-atomic-properties -Wmissing-declarations -Wmissing-prototypes -Wno-unused-parameter -Woverlength-strings -Wshadow -Wstrict-selector-match -Wundeclared-selector -Wunreachable-code

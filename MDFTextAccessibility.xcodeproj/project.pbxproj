@@ -50,6 +50,7 @@
 		0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MDFTextAccessibility.m; path = src/MDFTextAccessibility.m; sourceTree = SOURCE_ROOT; };
 		0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MDFTextAccessibility.h; path = src/MDFTextAccessibility.h; sourceTree = SOURCE_ROOT; };
 		0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMDFTextAccessibility.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MDFTextAccessibility.xcconfig; sourceTree = "<group>"; };
 		0BDAE3D61CECC62D003323B9 /* NSArray+MDFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MDFUtils.h"; sourceTree = "<group>"; };
 		0BDAE3D71CECC649003323B9 /* NSArray+MDFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MDFUtils.m"; sourceTree = "<group>"; };
 		0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFImageCalculations.m; sourceTree = "<group>"; };
@@ -112,10 +113,11 @@
 				0B06FEE91CE3908C00244A36 /* CONTRIBUTING.md */,
 				0B06FEEA1CE3908C00244A36 /* LICENSE */,
 				0B06FEEB1CE3908C00244A36 /* README.md */,
+				0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */,
 				0B2890E11CE2730C009E605A /* src */,
 				0B1450FA1CE373B70087403D /* tests */,
-				0B2890E01CE2730C009E605A /* Products */,
 				FE2B30D3B645564E163F0C71 /* Frameworks */,
+				0B2890E01CE2730C009E605A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -285,6 +287,7 @@
 /* Begin XCBuildConfiguration section */
 		0B2890D71CE27291009E605A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -296,6 +299,7 @@
 		};
 		0B2890D81CE27291009E605A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -305,6 +309,7 @@
 		};
 		0B2890E71CE2730C009E605A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -361,6 +366,7 @@
 		};
 		0B2890E81CE2730C009E605A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -409,6 +415,7 @@
 		};
 		0BDAE3E91CECD3A6003323B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -463,6 +470,7 @@
 		};
 		0BDAE3EA1CECD3A6003323B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
