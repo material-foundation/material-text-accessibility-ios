@@ -140,12 +140,12 @@ CGFloat MDFMinAlphaOfColorOnBackgroundColor(UIColor *color,
   CGFloat minAlpha = 0;
   CGFloat maxAlpha = 1;
 
-#if DEBUG
+#if DEBUG && !defined(NS_BLOCK_ASSERTIONS)
   colorComponents[3] = minAlpha;
   CGFloat minAlphaRatio =
       MDFContrastRatioOfRGBAComponents(colorComponents, backgroundColorComponents);
   NSCAssert(minAlphaRatio < minContrastRatio, @"Transparent color cannot be a valid color.");
-#endif  // DEBUG
+#endif  // !defined(NS_BLOCK_ASSERTIONS)
 
   // maxAlphaRatio is the best contrast ratio we can acheive by modifying the alpha of this color.
   // If it's not good enough, then return now and inform the caller.
