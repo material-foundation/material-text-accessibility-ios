@@ -7,11 +7,11 @@
 // -Wall,  // Standard known-to-be-bugs warnings.
 // -Wextra,  // Many useful extra warnings.
 // -Werror,  // All warnings as errors.
-// 
+//
 // Deprecation support: without these one can't rationally deprecate things.
 // -Wno-error=deprecated,  // Deprecation warnings are never errors.
 // -Wno-error=deprecated-implementations,  // Deprecation warnings are never errors.
-// 
+//
 // Useful warnings that are not in the 'all' and 'extra' classes.
 // -Wcast-align,  // Casting a pointer such that alignment is broken.
 // -Wconversion,  // Numeric conversion warnings.
