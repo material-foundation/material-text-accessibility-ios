@@ -1,3 +1,9 @@
+## 1.1.3
+
+### Enhancements
+
+* Fixed unused variable warning when NS_BLOCK_ASSERTIONS is defined ([Adrian Secord](https://github.com/ajsecord)).
+
 ## 1.1.2
 
 ### Enhancements
