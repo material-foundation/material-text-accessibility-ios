@@ -1,3 +1,10 @@
+## 1.1.4
+
+### Enhancements
+
+* Removed usage of header_mappings_dir.
+* Ran swift 3 update for example.
+
 ## 1.1.3
 
 ### Enhancements
