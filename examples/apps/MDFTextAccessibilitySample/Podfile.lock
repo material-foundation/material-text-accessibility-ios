@@ -1,5 +1,5 @@
 PODS:
-  - MDFTextAccessibility (1.1.3)
+  - MDFTextAccessibility (1.1.4)
 
 DEPENDENCIES:
   - MDFTextAccessibility (from `../../..`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../.."
 
 SPEC CHECKSUMS:
-  MDFTextAccessibility: 22a288710939a6dd47a411c5910e365dd3ee8009
+  MDFTextAccessibility: aa897b2675bc614c01a331053af680deea692148
 
 PODFILE CHECKSUM: ba1d198039c6b887cc904c2b80f4ae8bc213c6fd
 
