@@ -21,7 +21,7 @@ private let cellReuseIdentifier = "ColorCell"
 private let headerReuseIdentifier = "ColorHeader"
 
 /** Return a hex string like "#3FA066" from a UIColor object. */
-private func hexStringFromColor(color: UIColor) -> String {
+private func hexStringFromColor(_ color: UIColor) -> String {
   var red: CGFloat = 0
   var green: CGFloat = 0
   var blue: CGFloat = 0
@@ -39,34 +39,34 @@ private func randomRGBColor() -> UIColor {
 }
 
 /** Set the textColor of a UILabel based on a target text alpha and a background color. */
-private func setLabelAccessibleTextColor(label: UILabel,
+private func setLabelAccessibleTextColor(_ label: UILabel,
                                          targetTextAlpha: CGFloat,
                                          preferLightText: Bool,
                                          onBackgroundColor backgroundColor: UIColor?) {
   if (backgroundColor != nil) {
     let options : MDFTextAccessibilityOptions = [
-      MDFTextAccessibility.isLargeForContrastRatios(label.font) ? .LargeFont : .None,
-      preferLightText ? .PreferLighter : .PreferDarker
+      MDFTextAccessibility.isLarge(forContrastRatios: label.font) ? .largeFont : MDFTextAccessibilityOptions(),
+      preferLightText ? .preferLighter : .preferDarker
     ]
 
     label.textColor =
-      MDFTextAccessibility.textColorOnBackgroundColor(backgroundColor!,
+      MDFTextAccessibility.textColor(onBackgroundColor: backgroundColor!,
                                                       targetTextAlpha: targetTextAlpha,
                                                       options: options)
   }
 }
 
 /** A title containing a contrast ratio for a color ship. */
-private func contrastRatioTitle(prefix: String,
+private func contrastRatioTitle(_ prefix: String,
                                  textColor: UIColor,
                                  backgroundColor: UIColor) -> String {
-  let ratio = MDFTextAccessibility.contrastRatioForTextColor(textColor,
+  let ratio = MDFTextAccessibility.contrastRatio(forTextColor: textColor,
                                                              onBackgroundColor: backgroundColor);
   return prefix + String(format: " %.1f:1", ratio)
 }
 
 /** A title reporting the background color for a color chip. */
-private func backgroundColorTitle(prefix: String, backgroundColor: UIColor) -> String {
+private func backgroundColorTitle(_ prefix: String, backgroundColor: UIColor) -> String {
   return hexStringFromColor(backgroundColor)
 }
 
@@ -97,7 +97,7 @@ class ColorsCollectionViewController: UICollectionViewController {
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 8, 8, 8)
   }
 
-  private func createColorChipSections() {
+  fileprivate func createColorChipSections() {
     let numColorsPerSection = 10
     var colors = [UIColor]()
     for _ in 1...numColorsPerSection {
@@ -127,20 +127,20 @@ class ColorsCollectionViewController: UICollectionViewController {
     self.colorChipSections.append(colorChipSection)
   }
 
-  private func backgroundColorForIndexPath(indexPath: NSIndexPath) -> UIColor {
-    assert(indexPath.section < self.colorChipSections.count)
-    assert(indexPath.row < self.colorChipSections[indexPath.section].colors.count)
-    return self.colorChipSections[indexPath.section].colors[indexPath.row]
+  fileprivate func backgroundColorForIndexPath(_ indexPath: IndexPath) -> UIColor {
+    assert((indexPath as NSIndexPath).section < self.colorChipSections.count)
+    assert((indexPath as NSIndexPath).row < self.colorChipSections[(indexPath as NSIndexPath).section].colors.count)
+    return self.colorChipSections[(indexPath as NSIndexPath).section].colors[(indexPath as NSIndexPath).row]
   }
 
-  private func configureCell(cell: ColorCollectionViewCell,
-                             forItemAtIndexPath indexPath: NSIndexPath) {
-    let colorChipSection = self.colorChipSections[indexPath.section]
-    cell.backgroundColor = colorChipSection.colors[indexPath.row]
+  fileprivate func configureCell(_ cell: ColorCollectionViewCell,
+                             forItemAtIndexPath indexPath: IndexPath) {
+    let colorChipSection = self.colorChipSections[(indexPath as NSIndexPath).section]
+    cell.backgroundColor = colorChipSection.colors[(indexPath as NSIndexPath).row]
 
     let labels = [ cell.backgroundColorLabel, cell.largeTextLabel, cell.normalTextLabel ]
     for label in labels {
-      setLabelAccessibleTextColor(label,
+      setLabelAccessibleTextColor(label!,
                                   targetTextAlpha: colorChipSection.targetTextAlpha,
                                   preferLightText: colorChipSection.prefersLightText,
                                   onBackgroundColor: cell.backgroundColor)
@@ -159,34 +159,34 @@ class ColorsCollectionViewController: UICollectionViewController {
 
 // UICollectionViewDataSource methods
 extension ColorsCollectionViewController {
-  override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  override func numberOfSections(in collectionView: UICollectionView) -> Int {
     return self.colorChipSections.count
   }
 
-  override func collectionView(collectionView: UICollectionView,
+  override func collectionView(_ collectionView: UICollectionView,
                                numberOfItemsInSection section: Int) -> Int {
     return self.colorChipSections[section].colors.count
   }
 
   override func collectionView(
-    collectionView: UICollectionView,
-    cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellReuseIdentifier,
-                                                                     forIndexPath: indexPath)
+    _ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier,
+                                                                     for: indexPath)
     self.configureCell(cell as! ColorCollectionViewCell, forItemAtIndexPath: indexPath)
     return cell
   }
 
-  override func collectionView(collectionView: UICollectionView,
+  override func collectionView(_ collectionView: UICollectionView,
                                viewForSupplementaryElementOfKind kind: String,
-                               atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+                               at indexPath: IndexPath) -> UICollectionReusableView {
     assert(kind == UICollectionElementKindSectionHeader)
     let headerView =
-        collectionView.dequeueReusableSupplementaryViewOfKind(kind,
+        collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                               withReuseIdentifier: headerReuseIdentifier,
-                                                              forIndexPath: indexPath)
+                                                              for: indexPath)
         as! ColorCollectionViewHeader
-    headerView.titleLabel.text = self.colorChipSections[indexPath.section].title
+    headerView.titleLabel.text = self.colorChipSections[(indexPath as NSIndexPath).section].title
     return headerView
     }
   }
