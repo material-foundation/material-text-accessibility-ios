@@ -10,6 +10,5 @@ Pod::Spec.new do |spec|
   spec.source_files = "src/*.{h,m}", "src/private/*.{h,m}"
   spec.public_header_files = "src/MDFTextAccessibility.h"
   spec.private_header_files = "src/private/*.h"
-  spec.header_mappings_dir = "src"
   spec.header_dir   = "MDFTextAccessibility"
 end
