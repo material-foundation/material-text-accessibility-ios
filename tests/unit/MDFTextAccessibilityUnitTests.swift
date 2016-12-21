@@ -214,4 +214,17 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     XCTAssertTrue(components?[0] == 1)
     XCTAssertTrue(components?[1] == alpha)
   }
+
+  func testIsLargeFontContrastRatios() {
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.boldSystemFont(ofSize: 14)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 18)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 20)))
+
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.boldSystemFont(ofSize: 13)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 17)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 0)))
+
+    let mediumFont = UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: mediumFont))
+  }
 }
