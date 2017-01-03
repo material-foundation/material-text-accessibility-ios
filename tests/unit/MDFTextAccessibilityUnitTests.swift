@@ -214,4 +214,28 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     XCTAssertTrue(components?[0] == 1)
     XCTAssertTrue(components?[1] == alpha)
   }
+
+  func testIsLargeFontContrastRatios() {
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.boldSystemFont(ofSize: 14)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 18)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 20)))
+
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.boldSystemFont(ofSize: 13)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 17)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 10)))
+
+    // Bold and thicker fonts are considered large at a lower font size than nonbold fonts.
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightBlack)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightHeavy)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)))
+    // Semibold is considered bold by iOS font-weight APIs: fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold.
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold)))
+
+    // Non-bold fonts are not considered large at the lower font size threshold.
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)))
+  }
 }
