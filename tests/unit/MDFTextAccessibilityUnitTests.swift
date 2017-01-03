@@ -237,6 +237,5 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)))
-
   }
 }
