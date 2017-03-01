@@ -156,8 +156,9 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
 
 + (BOOL)isLargeForContrastRatios:(nullable UIFont *)font {
   UIFontDescriptor *fontDescriptor = font.fontDescriptor;
-  BOOL isBold =
-      (fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold) == UIFontDescriptorTraitBold;
+  NSDictionary *fontTraits = [fontDescriptor objectForKey:UIFontDescriptorTraitsAttribute];
+  NSNumber *fontWeight = fontTraits[UIFontWeightTrait];
+  BOOL isBold = fontWeight.doubleValue >= UIFontWeightMedium;
   return font.pointSize >= 18 || (isBold && font.pointSize >= 14);
 }
 
