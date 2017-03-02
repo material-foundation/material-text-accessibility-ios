@@ -240,4 +240,10 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)))
   }
+
+  func testUIFontWeightMediumValue() {
+    // Ensure that our placehold value for UIFontWeightMedium matches the real value.
+    // We are defining it for < iOS 8.2 in MDFTextAccessibility.m
+    XCTAssertEqualWithAccuracy(UIFontWeightMedium, 0.230000004172325, accuracy: CGFloat(FLT_EPSILON));
+  }
 }

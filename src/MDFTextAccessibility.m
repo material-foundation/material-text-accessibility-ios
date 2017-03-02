@@ -20,6 +20,13 @@
 #import "private/MDFImageCalculations.h"
 #import "private/NSArray+MDFUtils.h"
 
+#if !defined(__IPHONE_8_2) || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_2
+// This constant is defined in iOS 8.2.
+// https://developer.apple.com/reference/uikit/uifontweightmedium
+const CGFloat UIFontWeightMedium = 0.230000004172325;
+#endif
+
+
 static const CGFloat kMinContrastRatioNormalText = 4.5f;
 static const CGFloat kMinContrastRatioLargeText = 3.0f;
 static const CGFloat kMinContrastRatioNormalTextEnhanced = 7.0f;
@@ -170,12 +177,8 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
   // We treat medium as large for accesibility when larger than 14.
   NSDictionary *fontTraits = [fontDescriptor objectForKey:UIFontDescriptorTraitsAttribute];
   NSNumber *fontWeight = fontTraits[UIFontWeightTrait];
-#if defined(__IPHONE_8_2)
-  CGFloat fontWeightMedium = UIFontWeightMedium;
-#else
-  CGFloat fontWeightMedium = 0x3fcd70a3e0000000; // Value gotten from "po UIFontWeightMedium"
-#endif
-  if (fontWeight.doubleValue >= fontWeightMedium) {
+  NSLog(@"medium:%f",UIFontWeightMedium);
+  if (fontWeight.doubleValue >= UIFontWeightMedium) {
     return YES;
   }
 
