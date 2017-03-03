@@ -244,6 +244,6 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
   func testUIFontWeightMediumValue() {
     // Ensure that our placehold value for UIFontWeightMedium matches the real value.
     // We are defining it for < iOS 8.2 in MDFTextAccessibility.m
-    XCTAssertEqualWithAccuracy(UIFontWeightMedium, 0.230000004172325, accuracy: CGFloat(FLT_EPSILON));
+    XCTAssertEqualWithAccuracy(UIFontWeightMedium, (CGFloat)(0.23), accuracy: CGFloat(FLT_EPSILON));
   }
 }
