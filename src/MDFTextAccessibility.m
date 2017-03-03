@@ -177,7 +177,6 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
   // We treat medium as large for accesibility when larger than 14.
   NSDictionary *fontTraits = [fontDescriptor objectForKey:UIFontDescriptorTraitsAttribute];
   NSNumber *fontWeight = fontTraits[UIFontWeightTrait];
-  NSLog(@"medium:%f",UIFontWeightMedium);
   if (fontWeight.doubleValue >= UIFontWeightMedium) {
     return YES;
   }
