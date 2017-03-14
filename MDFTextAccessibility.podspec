@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   spec.license      = "Apache License, Version 2.0"
   spec.authors      = "Google Inc."
   spec.source       = { :git => "https://github.com/google/material-text-accessibility-ios.git", :tag => "v#{spec.version}" }
-  spec.platform     = :ios
+  spec.platform     = :ios,:tvos
   spec.source_files = "src/*.{h,m}", "src/private/*.{h,m}"
   spec.public_header_files = "src/MDFTextAccessibility.h"
   spec.private_header_files = "src/private/*.h"
