@@ -11,4 +11,6 @@ Pod::Spec.new do |spec|
   spec.public_header_files = "src/MDFTextAccessibility.h"
   spec.private_header_files = "src/private/*.h"
   spec.header_dir   = "MDFTextAccessibility"
+  spec.ios.deployment_target = '8.0'
+  spec.tvos.deployment_target = '9.0'
 end
