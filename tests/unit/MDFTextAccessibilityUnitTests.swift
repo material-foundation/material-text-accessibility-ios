@@ -26,86 +26,86 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
   // Test that no-modify-alpha properly skips a color with low alpha that would be otherwise ok.
 
   func testBasicChoices() {
-    let textColors = [ UIColor.whiteColor(), UIColor.blackColor() ]
-    let backgroundColor = UIColor.whiteColor()
-    let textColor = MDFTextAccessibility.textColorFromChoices(textColors,
+    let textColors = [ UIColor.white, UIColor.black ]
+    let backgroundColor = UIColor.white
+    let textColor = MDFTextAccessibility.textColor(fromChoices: textColors,
         onBackgroundColor: backgroundColor,
-        options: MDFTextAccessibilityOptions.None)
-    XCTAssertEqual(textColor, UIColor.blackColor())
+        options: MDFTextAccessibilityOptions())
+    XCTAssertEqual(textColor, UIColor.black)
   }
 
   func testChoiceFromEmptyChoicesReturnsNil() {
     let textColors:[UIColor] = []
-    let backgroundColor = UIColor.whiteColor()
-    let textColor = MDFTextAccessibility.textColorFromChoices(textColors,
+    let backgroundColor = UIColor.white
+    let textColor = MDFTextAccessibility.textColor(fromChoices: textColors,
         onBackgroundColor: backgroundColor,
-        options: MDFTextAccessibilityOptions.None)
+        options: MDFTextAccessibilityOptions())
     XCTAssertNil(textColor)
   }
 
   func testChoiceObservesLighterPreferences() {
     // Both lighterColor and darkerColor are acceptable in terms of contrast ratios.
     let lighterColor = UIColor(white: 0.1, alpha: 1)
-    let darkerColor = UIColor.blackColor()
+    let darkerColor = UIColor.black
     let textColors = [ darkerColor, lighterColor ]
-    let backgroundColor = UIColor.whiteColor()
-    let textColor = MDFTextAccessibility.textColorFromChoices(textColors,
+    let backgroundColor = UIColor.white
+    let textColor = MDFTextAccessibility.textColor(fromChoices: textColors,
         onBackgroundColor: backgroundColor,
-        options: MDFTextAccessibilityOptions.PreferLighter)
+        options: MDFTextAccessibilityOptions.preferLighter)
     XCTAssertEqual(textColor, lighterColor)
   }
 
   func testChoiceObservesDarkerPreferences() {
     // Both lighterColor and darkerColor are acceptable in terms of contrast ratios.
     let lighterColor = UIColor(white: 0.1, alpha: 1)
-    let darkerColor = UIColor.blackColor()
+    let darkerColor = UIColor.black
     let textColors = [ darkerColor, lighterColor ]
-    let backgroundColor = UIColor.whiteColor()
-    let textColor = MDFTextAccessibility.textColorFromChoices(textColors,
+    let backgroundColor = UIColor.white
+    let textColor = MDFTextAccessibility.textColor(fromChoices: textColors,
         onBackgroundColor: backgroundColor,
-        options: MDFTextAccessibilityOptions.PreferDarker)
+        options: MDFTextAccessibilityOptions.preferDarker)
     XCTAssertEqual(textColor, darkerColor)
   }
 
   // MARK: Minimum alpha values
 
   func testSameColorsHaveNoMinAlpha() {
-    let color = UIColor.whiteColor()
-    let minAlpha = MDFTextAccessibility.minAlphaOfTextColor(color,
+    let color = UIColor.white
+    let minAlpha = MDFTextAccessibility.minAlpha(ofTextColor: color,
         onBackgroundColor:color,
-        options:MDFTextAccessibilityOptions.None)
+        options:MDFTextAccessibilityOptions())
     XCTAssertEqual(minAlpha, -1)
   }
 
   func testBlackOnWhiteMinAlpha() {
-    let textColor = UIColor.blackColor()
-    let backgroundColor = UIColor.whiteColor()
-    let minAlpha = MDFTextAccessibility.minAlphaOfTextColor(textColor,
+    let textColor = UIColor.black
+    let backgroundColor = UIColor.white
+    let minAlpha = MDFTextAccessibility.minAlpha(ofTextColor: textColor,
         onBackgroundColor:backgroundColor,
-        options:MDFTextAccessibilityOptions.None)
+        options:MDFTextAccessibilityOptions())
     XCTAssertEqualWithAccuracy(minAlpha, 0.54, accuracy: alphaEpsilon)
   }
 
   func testLargeTextBlackOnWhiteMinAlpha() {
-    let textColor = UIColor.blackColor()
-    let backgroundColor = UIColor.whiteColor()
-    let minAlpha = MDFTextAccessibility.minAlphaOfTextColor(textColor,
+    let textColor = UIColor.black
+    let backgroundColor = UIColor.white
+    let minAlpha = MDFTextAccessibility.minAlpha(ofTextColor: textColor,
         onBackgroundColor:backgroundColor,
-        options:MDFTextAccessibilityOptions.LargeFont)
+        options:MDFTextAccessibilityOptions.largeFont)
     XCTAssertEqualWithAccuracy(minAlpha, 0.42, accuracy: alphaEpsilon)
   }
 
   func testMinAlphaIgnoresColorAlpha() {
-    let textColor = UIColor.blackColor()
-    let backgroundColor = UIColor.whiteColor()
-    let minAlpha = MDFTextAccessibility.minAlphaOfTextColor(textColor,
+    let textColor = UIColor.black
+    let backgroundColor = UIColor.white
+    let minAlpha = MDFTextAccessibility.minAlpha(ofTextColor: textColor,
         onBackgroundColor:backgroundColor,
-        options:MDFTextAccessibilityOptions.None)
+        options:MDFTextAccessibilityOptions())
 
     let textColorWithAlpha = UIColor(white: 0, alpha: 0.5)
-    let minAlphaWithColorWithAlpha = MDFTextAccessibility.minAlphaOfTextColor(textColorWithAlpha,
+    let minAlphaWithColorWithAlpha = MDFTextAccessibility.minAlpha(ofTextColor: textColorWithAlpha,
         onBackgroundColor:backgroundColor,
-        options:MDFTextAccessibilityOptions.None)
+        options:MDFTextAccessibilityOptions())
 
     XCTAssertEqualWithAccuracy(minAlpha, minAlphaWithColorWithAlpha, accuracy: alphaEpsilon)
   }
@@ -113,105 +113,129 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
   // MARK: Accessibility standard tests
 
   func testPassesStandards() {
-    let backgroundColor = UIColor.whiteColor()
+    let backgroundColor = UIColor.white
     let grey70 = UIColor(white: 0, alpha: 0.7)  // Passes everything.
     let grey60 = UIColor(white: 0, alpha: 0.6)  // Passes everything except normal text at level AAA.
     let grey50 = UIColor(white: 0, alpha: 0.5)  // Only passes for large text at level AA.
     let grey40 = UIColor(white: 0, alpha: 0.4)  // Fails everything.
 
     // Normal text at the AA level, has to be above ~0.54.
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .None))
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .None))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .None))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .None))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: MDFTextAccessibilityOptions()))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: MDFTextAccessibilityOptions()))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: MDFTextAccessibilityOptions()))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: MDFTextAccessibilityOptions()))
 
     // Large text at the AA level, has to be above ~0.42.
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .LargeFont))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .largeFont))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .largeFont))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .largeFont))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .largeFont))
 
     // Normal text at the AAA level, has to be above ~0.67.
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .EnhancedContrast))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: .enhancedContrast))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: .enhancedContrast))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: .enhancedContrast))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: .enhancedContrast))
 
     // Large text at the AAA level, has to be above ~0.54.
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
-    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
-    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: [.EnhancedContrast, .LargeFont]))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey70, passesOnBackgroundColor: backgroundColor, options: [.enhancedContrast, .largeFont]))
+    XCTAssertTrue(MDFTextAccessibility.textColor(grey60, passesOnBackgroundColor: backgroundColor, options: [.enhancedContrast, .largeFont]))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey50, passesOnBackgroundColor: backgroundColor, options: [.enhancedContrast, .largeFont]))
+    XCTAssertFalse(MDFTextAccessibility.textColor(grey40, passesOnBackgroundColor: backgroundColor, options: [.enhancedContrast, .largeFont]))
   }
 
   // MARK: "Large" fonts.
 
   func testNormalFontIsNotLarge() {
-    let font = UIFont.systemFontOfSize(14)
-    XCTAssertFalse(MDFTextAccessibility.isLargeForContrastRatios(font))
+    let font = UIFont.systemFont(ofSize: 14)
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: font))
   }
 
   func testLargeFontIsLarge() {
-    let font = UIFont.systemFontOfSize(18)
-    XCTAssertTrue(MDFTextAccessibility.isLargeForContrastRatios(font))
+    let font = UIFont.systemFont(ofSize: 18)
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: font))
   }
 
   func testSmallBoldFontIsNotLarge() {
-    let font = UIFont.boldSystemFontOfSize(13)
-    XCTAssertFalse(MDFTextAccessibility.isLargeForContrastRatios(font))
+    let font = UIFont.boldSystemFont(ofSize: 13)
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: font))
   }
 
   func testBoldFontIsLarge() {
-    let font = UIFont.boldSystemFontOfSize(14)
-    XCTAssertTrue(MDFTextAccessibility.isLargeForContrastRatios(font))
+    let font = UIFont.boldSystemFont(ofSize: 14)
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: font))
   }
   
   func testNilFontIsNotLarge() {
-    XCTAssertFalse(MDFTextAccessibility.isLargeForContrastRatios(nil))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: nil))
   }
 
   // MARK: textColorOnBackgroundImage
   
   func testTextColorOnEmptyBackgroundImage() {
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(UIImage.init(), inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: 1.0, font: UIFont.boldSystemFontOfSize(13))
+    let color = MDFTextAccessibility.textColor(onBackgroundImage: UIImage.init(), inRegion:CGRect(x: 0, y: 0, width: 10, height: 10), targetTextAlpha: 1.0, font: UIFont.boldSystemFont(ofSize: 13))
     XCTAssertNil(color)
   }
   
   func testTextColorOnNonEmptyBackgroundImageOffRegion() {
-    let image = UIImage.init(named: "100_100_gray", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(-10, -10, 10, 10), targetTextAlpha: 1.0, font: UIFont.boldSystemFontOfSize(13))
+    let image = UIImage.init(named: "100_100_gray", in: Bundle.init(for: type(of: self)), compatibleWith: nil)!
+    let color = MDFTextAccessibility.textColor(onBackgroundImage: image, inRegion:CGRect(x: -10, y: -10, width: 10, height: 10), targetTextAlpha: 1.0, font: UIFont.boldSystemFont(ofSize: 13))
     XCTAssertNil(color)
   }
   
   func testTextColorOnNonEmptyBackgroundImageZeroRect() {
-    let image = UIImage.init(named: "100_100_gray", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectZero, targetTextAlpha: 1.0, font: UIFont.boldSystemFontOfSize(13))
+    let image = UIImage.init(named: "100_100_gray", in: Bundle.init(for: type(of: self)), compatibleWith: nil)!
+    let color = MDFTextAccessibility.textColor(onBackgroundImage: image, inRegion:CGRect.zero, targetTextAlpha: 1.0, font: UIFont.boldSystemFont(ofSize: 13))
     XCTAssertNil(color)
   }
   
   func testTextColorOnNonEmptyBackgroundImage() {
-    let image = UIImage.init(named: "100_100_gray", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: 1.0, font: UIFont.boldSystemFontOfSize(13))
+    let image = UIImage.init(named: "100_100_gray", in: Bundle.init(for: type(of: self)), compatibleWith: nil)!
+    let color = MDFTextAccessibility.textColor(onBackgroundImage: image, inRegion:CGRect(x: 0, y: 0, width: 10, height: 10), targetTextAlpha: 1.0, font: UIFont.boldSystemFont(ofSize: 13))
     XCTAssertNotNil(color)
   }
   
   func testWhiteBackgroundImage() {
     let alpha:CGFloat = 1.0
-    let image = UIImage.init(named: "100_100_white", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: alpha, font: UIFont.boldSystemFontOfSize(13))
-    let components = CGColorGetComponents(color?.CGColor)
+    let image = UIImage.init(named: "100_100_white", in: Bundle.init(for: type(of: self)), compatibleWith: nil)!
+    let color = MDFTextAccessibility.textColor(onBackgroundImage: image, inRegion:CGRect(x: 0, y: 0, width: 10, height: 10), targetTextAlpha: alpha, font: UIFont.boldSystemFont(ofSize: 13))
+    let components = (color?.cgColor)?.components
     // 0 here for the first element in the components array represents a black color to give the most contrast against a fully white background image
-    XCTAssertTrue(components[0] == 0)
-    XCTAssertTrue(components[1] == alpha)
+    XCTAssertTrue(components?[0] == 0)
+    XCTAssertTrue(components?[1] == alpha)
   }
   
   func testBlackBackgroundImage() {
     let alpha:CGFloat = 1
-    let image = UIImage.init(named: "100_100_black", inBundle: NSBundle.init(forClass: self.dynamicType), compatibleWithTraitCollection: nil)!
-    let color = MDFTextAccessibility.textColorOnBackgroundImage(image, inRegion:CGRectMake(0, 0, 10, 10), targetTextAlpha: alpha, font: UIFont.boldSystemFontOfSize(13))
-    let components = CGColorGetComponents(color?.CGColor)
+    let image = UIImage.init(named: "100_100_black", in: Bundle.init(for: type(of: self)), compatibleWith: nil)!
+    let color = MDFTextAccessibility.textColor(onBackgroundImage: image, inRegion:CGRect(x: 0, y: 0, width: 10, height: 10), targetTextAlpha: alpha, font: UIFont.boldSystemFont(ofSize: 13))
+    let components = (color?.cgColor)?.components
     // 1 here for the first element in the components array represents a white color to give the most contrast against a fully black background image
-    XCTAssertTrue(components[0] == 1)
-    XCTAssertTrue(components[1] == alpha)
+    XCTAssertTrue(components?[0] == 1)
+    XCTAssertTrue(components?[1] == alpha)
+  }
+
+  func testIsLargeFontContrastRatios() {
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.boldSystemFont(ofSize: 14)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 18)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 20)))
+
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.boldSystemFont(ofSize: 13)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 17)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 10)))
+
+    // Bold and thicker fonts are considered large at a lower font size than nonbold fonts.
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightBlack)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightHeavy)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)))
+    // Semibold is considered bold by iOS font-weight APIs: fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold.
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold)))
+
+    // Non-bold fonts are not considered large at the lower font size threshold.
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)))
   }
 }
