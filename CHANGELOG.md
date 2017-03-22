@@ -1,3 +1,9 @@
+## 1.2.0
+
+### Enhancements
+
+* Add tvOS as a target plaform.
+
 ## 1.1.4
 
 ### Enhancements
