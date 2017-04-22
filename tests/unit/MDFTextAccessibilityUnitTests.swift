@@ -231,11 +231,19 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     // Semibold is considered bold by iOS font-weight APIs: fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold.
     XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold)))
 
+    // Material considers 'medium' as 'bold' when calculating contrast ratios for text.
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)))
+
     // Non-bold fonts are not considered large at the lower font size threshold.
-    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)))
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)))
+  }
+
+  func testUIFontWeightMediumValue() {
+    // Ensure that our placehold value for UIFontWeightMedium matches the real value.
+    // We are defining it for < iOS 8.2 in MDFTextAccessibility.m
+    XCTAssertEqualWithAccuracy(UIFontWeightMedium, (CGFloat)(0.23), accuracy: CGFloat(FLT_EPSILON));
   }
 }

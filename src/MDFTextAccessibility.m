@@ -155,10 +155,33 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
 }
 
 + (BOOL)isLargeForContrastRatios:(nullable UIFont *)font {
+  if (font.pointSize >= 18) {
+    return YES;
+  }
+  if (font.pointSize < 14) {
+    return NO;
+  }
+
   UIFontDescriptor *fontDescriptor = font.fontDescriptor;
-  BOOL isBold =
-      (fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold) == UIFontDescriptorTraitBold;
-  return font.pointSize >= 18 || (isBold && font.pointSize >= 14);
+  if ((fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold) == UIFontDescriptorTraitBold) {
+    return YES;
+  }
+#if !defined(__IPHONE_8_2) || __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_2
+  // This constant is defined in iOS 8.2.
+  // https://developer.apple.com/reference/uikit/uifontweightmedium
+  const CGFloat MDCFontWeightMedium = (CGFloat)0.23;
+#else
+  const CGFloat MDCFontWeightMedium = UIFontWeightMedium;
+#endif
+
+  // We treat medium as large for accesibility when larger than 14.
+  NSDictionary *fontTraits = [fontDescriptor objectForKey:UIFontDescriptorTraitsAttribute];
+  NSNumber *fontWeight = fontTraits[UIFontWeightTrait];
+  if (fontWeight.doubleValue >= MDCFontWeightMedium) {
+    return YES;
+  }
+
+  return NO;
 }
 
 #pragma mark - Private methods
