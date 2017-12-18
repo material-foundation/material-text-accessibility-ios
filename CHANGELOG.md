@@ -1,7 +1,12 @@
-# #develop#
+# 1.2.1
 
- TODO: Enumerate changes.
+This patch release adds various build system-related files.
 
+## Non-source changes
+
+* [Add missing Info.plist (#21)](https://github.com/material-foundation/material-text-accessibility-ios/commit/fc2a7cbbca2ac40fa6f09f34bf71033adc9d5308) (Louis Romero)
+* [Remove obsolete comment (#20)](https://github.com/material-foundation/material-text-accessibility-ios/commit/bac12cbbdacd11c0bb315359ec5373d08fc76fb8) (Brenton Simpson)
+* [Add support for kokoro and bazel continuous integration. (#19)](https://github.com/material-foundation/material-text-accessibility-ios/commit/fd570d71ae0124c75ad5af00e6b8b4b1668d5e40) (featherless)
 
 ## 1.2.0
 
