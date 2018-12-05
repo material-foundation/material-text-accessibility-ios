@@ -55,6 +55,12 @@ popd
 
 fix_bazel_imports
 
+if [ -n "$KOKORO_BUILD_NUMBER" ]; then
+  bazel version
+  use_bazel.sh 0.20.0
+  bazel version
+fi
+
 ./.kokoro-ios-runner/bazel.sh test //:UnitTests 8.1.0
 
 echo "Success!"
