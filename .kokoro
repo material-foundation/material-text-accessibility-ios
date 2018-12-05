@@ -62,6 +62,6 @@ if [ -n "$KOKORO_BUILD_NUMBER" ]; then
   bazel version
 fi
 
-./.kokoro-ios-runner/bazel.sh test //:UnitTests 8.1.0
+./.kokoro-ios-runner/bazel.sh test //:UnitTests 9.0.0
 
 echo "Success!"
