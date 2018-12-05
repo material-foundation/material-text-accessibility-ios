@@ -43,6 +43,7 @@ swift_library(
     resources = glob(["tests/resources/*"]),
     deps = [":MDFTextAccessibility"],
     visibility = ["//visibility:private"],
+    copts = ["-swift-version", "3"],
 )
 
 ios_unit_test(
@@ -50,6 +51,7 @@ ios_unit_test(
     deps = [
       ":UnitTestsSwiftLib"
     ],
+    minimum_os_version = "8.2",
     timeout = "short",
     visibility = ["//visibility:private"],
 )

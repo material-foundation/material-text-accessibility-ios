@@ -21,6 +21,7 @@ set -e
 set -x
 
 KOKORO_RUNNER_VERSION="v3.*"
+BAZEL_VERSION="0.20.0"
 
 fix_bazel_imports() {
   if [ -z "$KOKORO_BUILD_NUMBER" ]; then
@@ -57,7 +58,7 @@ fix_bazel_imports
 
 if [ -n "$KOKORO_BUILD_NUMBER" ]; then
   bazel version
-  use_bazel.sh 0.20.0
+  use_bazel.sh "$BAZEL_VERSION"
   bazel version
 fi
 
