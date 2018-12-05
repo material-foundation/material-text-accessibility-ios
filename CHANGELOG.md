@@ -1,3 +1,11 @@
+# 2.0.0
+
+This major release upgrades the bazel dependencies and workspace. This change is breaking for anyone
+using bazel to build this library. In order to use this library with bazel, you will also need to
+upgrade your workspace versions to match the ones now used in this library's `WORKSPACE` file.
+
+* [Update bazel workspace to latest versions. (#22)](https://github.com/material-foundation/material-text-accessibility-ios/commit/f21e585f9e5991e0eb00de8c7c01fe995057c902) (featherless)
+
 # 1.2.1
 
 This patch release adds various build system-related files.

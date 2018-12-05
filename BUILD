@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-load("@bazel_ios_warnings//:strict_warnings_objc_library.bzl", "strict_warnings_objc_library")
-load("@build_bazel_rules_apple//apple:swift.bzl", "swift_library")
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("@bazel_ios_warnings//:strict_warnings_objc_library.bzl", "strict_warnings_objc_library")
 
 licenses(["notice"])  # Apache 2.0
 
@@ -43,6 +43,7 @@ swift_library(
     resources = glob(["tests/resources/*"]),
     deps = [":MDFTextAccessibility"],
     visibility = ["//visibility:private"],
+    copts = ["-swift-version", "3"],
 )
 
 ios_unit_test(
@@ -50,6 +51,7 @@ ios_unit_test(
     deps = [
       ":UnitTestsSwiftLib"
     ],
+    minimum_os_version = "8.2",
     timeout = "short",
     visibility = ["//visibility:private"],
 )

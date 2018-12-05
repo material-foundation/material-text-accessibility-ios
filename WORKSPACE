@@ -12,14 +12,43 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_file")
+
 git_repository(
     name = "build_bazel_rules_apple",
     remote = "https://github.com/bazelbuild/rules_apple.git",
-    commit = "7ea0557",
+    tag = "0.9.0",
 )
+
+load(
+    "@build_bazel_rules_apple//apple:repositories.bzl",
+    "apple_rules_dependencies",
+)
+
+apple_rules_dependencies()
+
+git_repository(
+    name = "build_bazel_rules_swift",
+    remote = "https://github.com/bazelbuild/rules_swift.git",
+    tag = "0.4.0",
+)
+
+load(
+    "@build_bazel_rules_swift//swift:repositories.bzl",
+    "swift_rules_dependencies",
+)
+
+swift_rules_dependencies()
 
 git_repository(
     name = "bazel_ios_warnings",
     remote = "https://github.com/material-foundation/bazel_ios_warnings.git",
-    tag = "v1.0.1",
+    tag = "v2.0.0",
+)
+
+http_file(
+    name = "xctestrunner",
+    executable = 1,
+    urls = ["https://github.com/google/xctestrunner/releases/download/0.2.5/ios_test_runner.par"],
 )
