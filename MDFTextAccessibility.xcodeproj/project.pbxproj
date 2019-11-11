@@ -221,16 +221,15 @@
 					};
 					0BDAE3DF1CECD3A6003323B9 = {
 						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
 			buildConfigurationList = 0B2890D61CE27291009E605A /* Build configuration list for PBXProject "MDFTextAccessibility" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 			);
 			mainGroup = 0B2890D21CE27291009E605A;
@@ -364,7 +363,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -413,7 +412,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -470,7 +469,7 @@
 				SWIFT_INCLUDE_PATHS = src;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/MDFTextAccessibility-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -518,7 +517,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = src;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
