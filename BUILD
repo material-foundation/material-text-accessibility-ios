@@ -51,7 +51,7 @@ ios_unit_test(
     deps = [
       ":UnitTestsSwiftLib"
     ],
-    minimum_os_version = "8.2",
+    minimum_os_version = "9.0",
     timeout = "short",
     visibility = ["//visibility:private"],
 )
