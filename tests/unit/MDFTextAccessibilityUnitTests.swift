@@ -83,7 +83,7 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     let minAlpha = MDFTextAccessibility.minAlpha(ofTextColor: textColor,
         onBackgroundColor:backgroundColor,
         options:MDFTextAccessibilityOptions())
-    XCTAssertEqualWithAccuracy(minAlpha, 0.54, accuracy: alphaEpsilon)
+    XCTAssertEqual(minAlpha, 0.54, accuracy: alphaEpsilon)
   }
 
   func testLargeTextBlackOnWhiteMinAlpha() {
@@ -92,7 +92,7 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     let minAlpha = MDFTextAccessibility.minAlpha(ofTextColor: textColor,
         onBackgroundColor:backgroundColor,
         options:MDFTextAccessibilityOptions.largeFont)
-    XCTAssertEqualWithAccuracy(minAlpha, 0.42, accuracy: alphaEpsilon)
+    XCTAssertEqual(minAlpha, 0.42, accuracy: alphaEpsilon)
   }
 
   func testMinAlphaIgnoresColorAlpha() {
@@ -107,7 +107,7 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
         onBackgroundColor:backgroundColor,
         options:MDFTextAccessibilityOptions())
 
-    XCTAssertEqualWithAccuracy(minAlpha, minAlphaWithColorWithAlpha, accuracy: alphaEpsilon)
+    XCTAssertEqual(minAlpha, minAlphaWithColorWithAlpha, accuracy: alphaEpsilon)
   }
 
   // MARK: Accessibility standard tests
@@ -225,17 +225,17 @@ class MDFTextAccessibilityUnitTests: XCTestCase {
     XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 10)))
 
     // Bold and thicker fonts are considered large at a lower font size than nonbold fonts.
-    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightBlack)))
-    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightHeavy)))
-    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightBold)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.black)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.heavy)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold)))
     // Semibold is considered bold by iOS font-weight APIs: fontDescriptor.symbolicTraits & UIFontDescriptorTraitBold.
-    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightSemibold)))
+    XCTAssertTrue(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.semibold)))
 
     // Non-bold fonts are not considered large at the lower font size threshold.
-    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightMedium)))
-    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightRegular)))
-    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)))
-    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightThin)))
-    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFontWeightUltraLight)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.medium)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.thin)))
+    XCTAssertFalse(MDFTextAccessibility.isLarge(forContrastRatios: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.ultraLight)))
   }
 }
