@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B06FEF41CE6342C00244A36 /* MDFColorCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B06FEF31CE6342C00244A36 /* MDFColorCalculations.m */; };
-		0B2890E91CE2732B009E605A /* MDFTextAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */; };
 		0BDAE3D81CECC649003323B9 /* NSArray+MDFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D71CECC649003323B9 /* NSArray+MDFUtils.m */; };
 		0BDAE3DA1CECD231003323B9 /* MDFImageCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */; };
 		0BDAE3E51CECD3A6003323B9 /* libMDFTextAccessibility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */; };
@@ -47,8 +46,6 @@
 		0B06FEEB1CE3908C00244A36 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0B06FEF21CE6342C00244A36 /* MDFColorCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFColorCalculations.h; sourceTree = "<group>"; };
 		0B06FEF31CE6342C00244A36 /* MDFColorCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFColorCalculations.m; sourceTree = "<group>"; };
-		0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MDFTextAccessibility.m; path = src/MDFTextAccessibility.m; sourceTree = SOURCE_ROOT; };
-		0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MDFTextAccessibility.h; path = src/MDFTextAccessibility.h; sourceTree = SOURCE_ROOT; };
 		0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMDFTextAccessibility.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MDFTextAccessibility.xcconfig; sourceTree = "<group>"; };
 		0BDAE3D61CECC62D003323B9 /* NSArray+MDFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MDFUtils.h"; sourceTree = "<group>"; };
@@ -57,12 +54,13 @@
 		0BDAE3DB1CECD256003323B9 /* MDFImageCalculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFImageCalculations.h; sourceTree = "<group>"; };
 		0BDAE3E01CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDFTextAccessibilityUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDAE3E41CECD3A6003323B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BDAE3EB1CECD4BC003323B9 /* MDFTextAccessibility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-Bridging-Header.h"; sourceTree = "<group>"; };
-		0BDAE3EE1CECD7E2003323B9 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFTextAccessibilityUnitTests.swift; sourceTree = "<group>"; };
 		414705A21D4D545400F983B8 /* 100_100_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_100_black.png; sourceTree = "<group>"; };
 		414705A31D4D545400F983B8 /* 100_100_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_100_gray.png; sourceTree = "<group>"; };
 		414705A41D4D545400F983B8 /* 100_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_100_white.png; sourceTree = "<group>"; };
+		E5AF90BB25C4B87D00454B23 /* MDFTextAccessibility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDFTextAccessibility.m; sourceTree = "<group>"; };
+		E5AF90BC25C4B87D00454B23 /* MDFTextAccessibility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-Bridging-Header.h"; sourceTree = "<group>"; };
+		E5AF90BD25C4B87D00454B23 /* MDFTextAccessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFTextAccessibility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,13 +131,11 @@
 		0B2890E11CE2730C009E605A /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0BDAE3EB1CECD4BC003323B9 /* MDFTextAccessibility-Bridging-Header.h */,
-				0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */,
-				0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */,
-				0BDAE3EE1CECD7E2003323B9 /* module.modulemap */,
+				E5AF90BA25C4B87D00454B23 /* include */,
 				0B06FEF11CE6341500244A36 /* private */,
 			);
-			path = src;
+			name = src;
+			path = Sources/MDFTextAccessibility;
 			sourceTree = SOURCE_ROOT;
 		};
 		0BDAE3E11CECD3A6003323B9 /* unit */ = {
@@ -159,6 +155,16 @@
 				414705A41D4D545400F983B8 /* 100_100_white.png */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		E5AF90BA25C4B87D00454B23 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				E5AF90BB25C4B87D00454B23 /* MDFTextAccessibility.m */,
+				E5AF90BC25C4B87D00454B23 /* MDFTextAccessibility-Bridging-Header.h */,
+				E5AF90BD25C4B87D00454B23 /* MDFTextAccessibility.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 		FE2B30D3B645564E163F0C71 /* Frameworks */ = {
@@ -230,6 +236,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 0B2890D21CE27291009E605A;
@@ -261,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B2890E91CE2732B009E605A /* MDFTextAccessibility.m in Sources */,
 				0B06FEF41CE6342C00244A36 /* MDFColorCalculations.m in Sources */,
 				0BDAE3D81CECC649003323B9 /* NSArray+MDFUtils.m in Sources */,
 				0BDAE3DA1CECD231003323B9 /* MDFImageCalculations.m in Sources */,
@@ -293,7 +299,7 @@
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -304,7 +310,7 @@
 			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
@@ -363,7 +369,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -412,7 +418,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -466,10 +472,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibilityUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_INCLUDE_PATHS = src;
-				SWIFT_OBJC_BRIDGING_HEADER = "src/MDFTextAccessibility-Bridging-Header.h";
+				SWIFT_INCLUDE_PATHS = Sources/MDFTextAccessibility;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MDFTextAccessibility/include/MDFTextAccessibility-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -515,9 +521,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibilityUnitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_INCLUDE_PATHS = src;
-				SWIFT_OBJC_BRIDGING_HEADER = "src/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_INCLUDE_PATHS = Sources/MDFTextAccessibility;
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/MDFTextAccessibility/include/MDFTextAccessibility-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
