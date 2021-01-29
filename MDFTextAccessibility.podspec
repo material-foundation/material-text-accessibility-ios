@@ -7,10 +7,10 @@ Pod::Spec.new do |spec|
   spec.authors      = "Google Inc."
   spec.source       = { :git => "https://github.com/google/material-text-accessibility-ios.git", :tag => "v#{spec.version}" }
   spec.platform     = :ios,:tvos
-  spec.source_files = "src/*.{h,m}", "src/private/*.{h,m}"
-  spec.public_header_files = "src/MDFTextAccessibility.h"
-  spec.private_header_files = "src/private/*.h"
+  spec.source_files = "Sources/MDFTextAccessibility/include/*.{h,m}", "Sources/MDFTextAccessibility/private/*.{h,m}"
+  spec.public_header_files = "Sources/MDFTextAccessibility/include/MDFTextAccessibility.h"
+  spec.private_header_files = "Sources/MDFTextAccessibility/private/*.h"
   spec.header_dir   = "MDFTextAccessibility"
-  spec.ios.deployment_target = '8.0'
+  spec.ios.deployment_target = '9.0'
   spec.tvos.deployment_target = '9.0'
 end

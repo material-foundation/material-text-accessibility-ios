@@ -94,7 +94,7 @@ class ColorsCollectionViewController: UICollectionViewController {
 
   override func viewDidLoad() {
     let flowLayout = self.collectionViewLayout as! UICollectionViewFlowLayout
-    flowLayout.sectionInset = UIEdgeInsetsMake(0, 8, 8, 8)
+    flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 8, right: 8)
   }
 
   fileprivate func createColorChipSections() {
@@ -180,7 +180,7 @@ extension ColorsCollectionViewController {
   override func collectionView(_ collectionView: UICollectionView,
                                viewForSupplementaryElementOfKind kind: String,
                                at indexPath: IndexPath) -> UICollectionReusableView {
-    assert(kind == UICollectionElementKindSectionHeader)
+    assert(kind == UICollectionView.elementKindSectionHeader)
     let headerView =
         collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                               withReuseIdentifier: headerReuseIdentifier,
