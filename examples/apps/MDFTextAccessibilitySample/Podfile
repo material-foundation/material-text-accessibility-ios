@@ -1,4 +1,4 @@
-platform :ios, '9.3'
+platform :ios, '10'
 use_frameworks!
 
 target 'MDFTextAccessibilitySample' do
