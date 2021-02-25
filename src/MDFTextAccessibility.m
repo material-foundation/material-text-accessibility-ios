@@ -48,19 +48,21 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
     return nil;
   }
 
-  return
-      [self textColorOnBackgroundColor:backgroundColor targetTextAlpha:targetTextAlpha font:font];
+  return [self textColorOnBackgroundColor:backgroundColor
+                          targetTextAlpha:targetTextAlpha
+                                     font:font];
 }
 
 + (nullable UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundColor
                                  targetTextAlpha:(CGFloat)targetTextAlpha
                                          options:(MDFTextAccessibilityOptions)options {
   NSArray *colors = @[
-    [UIColor colorWithWhite:1 alpha:targetTextAlpha],
-    [UIColor colorWithWhite:0 alpha:targetTextAlpha]
+    [UIColor colorWithWhite:1 alpha:targetTextAlpha], [UIColor colorWithWhite:0
+                                                                        alpha:targetTextAlpha]
   ];
-  UIColor *textColor =
-      [self textColorFromChoices:colors onBackgroundColor:backgroundColor options:options];
+  UIColor *textColor = [self textColorFromChoices:colors
+                                onBackgroundColor:backgroundColor
+                                          options:options];
   return textColor;
 }
 
@@ -107,8 +109,9 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
     }
 
     CGFloat alpha = CGColorGetAlpha(choice.CGColor);
-    CGFloat minAlpha =
-        [self minAlphaOfTextColor:choice onBackgroundColor:backgroundColor options:options];
+    CGFloat minAlpha = [self minAlphaOfTextColor:choice
+                               onBackgroundColor:backgroundColor
+                                         options:options];
     if (minAlpha > 0) {
       if (alpha > minAlpha) {
         NSAssert(NO,
