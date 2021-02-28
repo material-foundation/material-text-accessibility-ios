@@ -22,6 +22,7 @@ exports_files(["LICENSE"])
 
 strict_warnings_objc_library(
     name = "MDFTextAccessibility",
+    module_name = "MDFTextAccessibility",
     srcs = glob([
         "src/*.m",
         "src/private/*.m",
@@ -43,7 +44,7 @@ swift_library(
     resources = glob(["tests/resources/*"]),
     deps = [":MDFTextAccessibility"],
     visibility = ["//visibility:private"],
-    copts = ["-swift-version", "3"],
+    copts = ["-swift-version", "4"],
 )
 
 ios_unit_test(
@@ -51,7 +52,7 @@ ios_unit_test(
     deps = [
       ":UnitTestsSwiftLib"
     ],
-    minimum_os_version = "8.2",
+    minimum_os_version = "9.0",
     timeout = "short",
     visibility = ["//visibility:private"],
 )

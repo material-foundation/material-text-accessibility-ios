@@ -44,11 +44,11 @@ swift_rules_dependencies()
 git_repository(
     name = "bazel_ios_warnings",
     remote = "https://github.com/material-foundation/bazel_ios_warnings.git",
-    tag = "v2.0.0",
+    tag = "v3.0.0",
 )
 
 http_file(
     name = "xctestrunner",
     executable = 1,
-    urls = ["https://github.com/google/xctestrunner/releases/download/0.2.5/ios_test_runner.par"],
+    urls = ["https://github.com/google/xctestrunner/releases/download/0.2.10/ios_test_runner.par"],
 )

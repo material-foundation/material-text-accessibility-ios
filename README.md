@@ -96,6 +96,12 @@ For more advanced usage, such as selecting from a set of colors other than white
 and black, see MDFTextAccessibility's
 `textColorFromChoices:onBackgroundColor:options:`.
 
+## Requirements
+
+- Xcode 9 or higher
+- Minimum iOS deployment target of 9.0 or higher
+- CocoaPods 1.5 or higher
+
 ## License
 
 MDFTextAccessiblity is licensed under the [Apache License Version 2.0](LICENSE).
