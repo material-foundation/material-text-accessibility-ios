@@ -1,3 +1,13 @@
+# 2.0.1
+
+This patch release adds Swift Package Manager support.
+
+* [Adding SPM Support](https://github.com/material-foundation/material-text-accessibility-ios/commit/5b185245864e6b58d6b26dfbe5cd4447e4fda2b4) (DomenicBianchi01)
+* [Internal change](https://github.com/material-foundation/material-text-accessibility-ios/commit/191c0f3eb2b38b29d74338c891cf1acecc74bb44) (Andrew Overton)
+* [Internal change](https://github.com/material-foundation/material-text-accessibility-ios/commit/3f21de715f00813ddae1a5f7e9aa7dc8a1ff3ae1) (Andrew Overton)
+* [Internal change](https://github.com/material-foundation/material-text-accessibility-ios/commit/36ddff44400af3d906ba842d3edb6276d4454d60) (Andrew Overton)
+* [Internal change](https://github.com/material-foundation/material-text-accessibility-ios/commit/f5b3d221f3a633c5ddff5309141fee7d9e01a8bb) (Andrew Overton)
+
 # 2.0.0
 
 This major release upgrades the bazel dependencies and workspace. This change is breaking for anyone
