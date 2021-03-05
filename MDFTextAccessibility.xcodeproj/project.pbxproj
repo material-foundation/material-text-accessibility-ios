@@ -7,38 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B06FEF41CE6342C00244A36 /* MDFColorCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B06FEF31CE6342C00244A36 /* MDFColorCalculations.m */; };
-		0B2890E91CE2732B009E605A /* MDFTextAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */; };
-		0BDAE3D81CECC649003323B9 /* NSArray+MDFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D71CECC649003323B9 /* NSArray+MDFUtils.m */; };
-		0BDAE3DA1CECD231003323B9 /* MDFImageCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */; };
-		0BDAE3E51CECD3A6003323B9 /* libMDFTextAccessibility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */; };
-		0BF99E7A1CF4F39200E6F9B9 /* MDFTextAccessibilityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */; };
-		414705A51D4D54CE00F983B8 /* 100_100_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 414705A21D4D545400F983B8 /* 100_100_black.png */; };
-		414705A61D4D54CE00F983B8 /* 100_100_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 414705A31D4D545400F983B8 /* 100_100_gray.png */; };
-		414705A71D4D54CE00F983B8 /* 100_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 414705A41D4D545400F983B8 /* 100_100_white.png */; };
+		6D47A3DB21F9F31100572484 /* MDFColorCalculations.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B06FEF21CE6342C00244A36 /* MDFColorCalculations.h */; };
+		6D47A3DC21F9F31100572484 /* MDFColorCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B06FEF31CE6342C00244A36 /* MDFColorCalculations.m */; };
+		6D47A3DD21F9F31100572484 /* MDFImageCalculations.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BDAE3DB1CECD256003323B9 /* MDFImageCalculations.h */; };
+		6D47A3DE21F9F31100572484 /* MDFImageCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */; };
+		6D47A3DF21F9F31100572484 /* NSArray+MDFUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BDAE3D61CECC62D003323B9 /* NSArray+MDFUtils.h */; };
+		6D47A3E021F9F31100572484 /* NSArray+MDFUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BDAE3D71CECC649003323B9 /* NSArray+MDFUtils.m */; };
+		6D47A3E121F9F31900572484 /* MDFTextAccessibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D47A3E221F9F31900572484 /* MDFTextAccessibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */; };
+		6D47A3EC21F9F47700572484 /* MDFTextAccessibility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D47A3D221F9F2E500572484 /* MDFTextAccessibility.framework */; };
+		6D47A3F321F9F48A00572484 /* 100_100_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 414705A21D4D545400F983B8 /* 100_100_black.png */; };
+		6D47A3F421F9F48A00572484 /* 100_100_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 414705A31D4D545400F983B8 /* 100_100_gray.png */; };
+		6D47A3F521F9F48A00572484 /* 100_100_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 414705A41D4D545400F983B8 /* 100_100_white.png */; };
+		6D47A3F621F9F48C00572484 /* MDFTextAccessibilityUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0BDAE3E61CECD3A6003323B9 /* PBXContainerItemProxy */ = {
+		6D47A3ED21F9F47700572484 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B2890D31CE27291009E605A /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0B2890DE1CE2730C009E605A;
+			remoteGlobalIDString = 6D47A3D121F9F2E500572484;
 			remoteInfo = MDFTextAccessibility;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0B2890DD1CE2730C009E605A /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B06FEE81CE3908C00244A36 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -48,36 +40,36 @@
 		0B06FEF21CE6342C00244A36 /* MDFColorCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDFColorCalculations.h; sourceTree = "<group>"; };
 		0B06FEF31CE6342C00244A36 /* MDFColorCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFColorCalculations.m; sourceTree = "<group>"; };
 		0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MDFTextAccessibility.m; path = src/MDFTextAccessibility.m; sourceTree = SOURCE_ROOT; };
-		0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MDFTextAccessibility.h; path = src/MDFTextAccessibility.h; sourceTree = SOURCE_ROOT; };
-		0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMDFTextAccessibility.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFTextAccessibility.h; sourceTree = "<group>"; };
 		0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = MDFTextAccessibility.xcconfig; sourceTree = "<group>"; };
 		0BDAE3D61CECC62D003323B9 /* NSArray+MDFUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+MDFUtils.h"; sourceTree = "<group>"; };
 		0BDAE3D71CECC649003323B9 /* NSArray+MDFUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MDFUtils.m"; sourceTree = "<group>"; };
 		0BDAE3D91CECD231003323B9 /* MDFImageCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDFImageCalculations.m; sourceTree = "<group>"; };
 		0BDAE3DB1CECD256003323B9 /* MDFImageCalculations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDFImageCalculations.h; sourceTree = "<group>"; };
-		0BDAE3E01CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDFTextAccessibilityUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDAE3E41CECD3A6003323B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BDAE3EB1CECD4BC003323B9 /* MDFTextAccessibility-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDFTextAccessibility-Bridging-Header.h"; sourceTree = "<group>"; };
-		0BDAE3EE1CECD7E2003323B9 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		0BF99E781CF4F36300E6F9B9 /* MDFTextAccessibilityUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MDFTextAccessibilityUnitTests.swift; sourceTree = "<group>"; };
 		414705A21D4D545400F983B8 /* 100_100_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_100_black.png; sourceTree = "<group>"; };
 		414705A31D4D545400F983B8 /* 100_100_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_100_gray.png; sourceTree = "<group>"; };
 		414705A41D4D545400F983B8 /* 100_100_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 100_100_white.png; sourceTree = "<group>"; };
+		6D47A3D221F9F2E500572484 /* MDFTextAccessibility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDFTextAccessibility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D47A3D521F9F2E500572484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D47A3E721F9F47700572484 /* MDFTextAccessibilityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MDFTextAccessibilityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D47A3EB21F9F47700572484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B2890DC1CE2730C009E605A /* Frameworks */ = {
+		6D47A3CF21F9F2E500572484 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0BDAE3DD1CECD3A6003323B9 /* Frameworks */ = {
+		6D47A3E421F9F47700572484 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BDAE3E51CECD3A6003323B9 /* libMDFTextAccessibility.a in Frameworks */,
+				6D47A3EC21F9F47700572484 /* MDFTextAccessibility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +92,7 @@
 		0B1450FA1CE373B70087403D /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				6D47A3EB21F9F47700572484 /* Info.plist */,
 				414705A11D4D541400F983B8 /* resources */,
 				0BDAE3E11CECD3A6003323B9 /* unit */,
 			);
@@ -109,9 +102,9 @@
 		0B2890D21CE27291009E605A = {
 			isa = PBXGroup;
 			children = (
+				0B06FEEA1CE3908C00244A36 /* LICENSE */,
 				0B06FEE81CE3908C00244A36 /* CHANGELOG.md */,
 				0B06FEE91CE3908C00244A36 /* CONTRIBUTING.md */,
-				0B06FEEA1CE3908C00244A36 /* LICENSE */,
 				0B06FEEB1CE3908C00244A36 /* README.md */,
 				0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */,
 				0B2890E11CE2730C009E605A /* src */,
@@ -124,8 +117,8 @@
 		0B2890E01CE2730C009E605A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */,
-				0BDAE3E01CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.xctest */,
+				6D47A3D221F9F2E500572484 /* MDFTextAccessibility.framework */,
+				6D47A3E721F9F47700572484 /* MDFTextAccessibilityTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,10 +126,9 @@
 		0B2890E11CE2730C009E605A /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0BDAE3EB1CECD4BC003323B9 /* MDFTextAccessibility-Bridging-Header.h */,
+				6D47A3D521F9F2E500572484 /* Info.plist */,
 				0B2890DA1CE272B6009E605A /* MDFTextAccessibility.h */,
 				0B2890D91CE272B6009E605A /* MDFTextAccessibility.m */,
-				0BDAE3EE1CECD7E2003323B9 /* module.modulemap */,
 				0B06FEF11CE6341500244A36 /* private */,
 			);
 			path = src;
@@ -170,14 +162,29 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6D47A3CD21F9F2E500572484 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D47A3E121F9F31900572484 /* MDFTextAccessibility.h in Headers */,
+				6D47A3DD21F9F31100572484 /* MDFImageCalculations.h in Headers */,
+				6D47A3DB21F9F31100572484 /* MDFColorCalculations.h in Headers */,
+				6D47A3DF21F9F31100572484 /* NSArray+MDFUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		0B2890DE1CE2730C009E605A /* MDFTextAccessibility */ = {
+		6D47A3D121F9F2E500572484 /* MDFTextAccessibility */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0B2890E61CE2730C009E605A /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */;
+			buildConfigurationList = 6D47A3D721F9F2E500572484 /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */;
 			buildPhases = (
-				0B2890DB1CE2730C009E605A /* Sources */,
-				0B2890DC1CE2730C009E605A /* Frameworks */,
-				0B2890DD1CE2730C009E605A /* CopyFiles */,
+				6D47A3CD21F9F2E500572484 /* Headers */,
+				6D47A3CE21F9F2E500572484 /* Sources */,
+				6D47A3CF21F9F2E500572484 /* Frameworks */,
+				6D47A3D021F9F2E500572484 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -185,25 +192,25 @@
 			);
 			name = MDFTextAccessibility;
 			productName = MDFTextAccessibility;
-			productReference = 0B2890DF1CE2730C009E605A /* libMDFTextAccessibility.a */;
-			productType = "com.apple.product-type.library.static";
+			productReference = 6D47A3D221F9F2E500572484 /* MDFTextAccessibility.framework */;
+			productType = "com.apple.product-type.framework";
 		};
-		0BDAE3DF1CECD3A6003323B9 /* MDFTextAccessibilityUnitTests */ = {
+		6D47A3E621F9F47700572484 /* MDFTextAccessibilityTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0BDAE3E81CECD3A6003323B9 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilityUnitTests" */;
+			buildConfigurationList = 6D47A3EF21F9F47700572484 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilityTests" */;
 			buildPhases = (
-				0BDAE3DC1CECD3A6003323B9 /* Sources */,
-				0BDAE3DD1CECD3A6003323B9 /* Frameworks */,
-				0BDAE3DE1CECD3A6003323B9 /* Resources */,
+				6D47A3E321F9F47700572484 /* Sources */,
+				6D47A3E421F9F47700572484 /* Frameworks */,
+				6D47A3E521F9F47700572484 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0BDAE3E71CECD3A6003323B9 /* PBXTargetDependency */,
+				6D47A3EE21F9F47700572484 /* PBXTargetDependency */,
 			);
-			name = MDFTextAccessibilityUnitTests;
-			productName = MDFTextAccessibilityUnitTests;
-			productReference = 0BDAE3E01CECD3A6003323B9 /* MDFTextAccessibilityUnitTests.xctest */;
+			name = MDFTextAccessibilityTests;
+			productName = MDFTextAccessibilityTests;
+			productReference = 6D47A3E721F9F47700572484 /* MDFTextAccessibilityTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -212,16 +219,16 @@
 		0B2890D31CE27291009E605A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
 				TargetAttributes = {
-					0B2890DE1CE2730C009E605A = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0800;
+					6D47A3D121F9F2E500572484 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
-					0BDAE3DF1CECD3A6003323B9 = {
-						CreatedOnToolsVersion = 7.2;
-						LastSwiftMigration = 0800;
+					6D47A3E621F9F47700572484 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -237,52 +244,59 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0B2890DE1CE2730C009E605A /* MDFTextAccessibility */,
-				0BDAE3DF1CECD3A6003323B9 /* MDFTextAccessibilityUnitTests */,
+				6D47A3D121F9F2E500572484 /* MDFTextAccessibility */,
+				6D47A3E621F9F47700572484 /* MDFTextAccessibilityTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0BDAE3DE1CECD3A6003323B9 /* Resources */ = {
+		6D47A3D021F9F2E500572484 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414705A61D4D54CE00F983B8 /* 100_100_gray.png in Resources */,
-				414705A71D4D54CE00F983B8 /* 100_100_white.png in Resources */,
-				414705A51D4D54CE00F983B8 /* 100_100_black.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D47A3E521F9F47700572484 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D47A3F421F9F48A00572484 /* 100_100_gray.png in Resources */,
+				6D47A3F521F9F48A00572484 /* 100_100_white.png in Resources */,
+				6D47A3F321F9F48A00572484 /* 100_100_black.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0B2890DB1CE2730C009E605A /* Sources */ = {
+		6D47A3CE21F9F2E500572484 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B2890E91CE2732B009E605A /* MDFTextAccessibility.m in Sources */,
-				0B06FEF41CE6342C00244A36 /* MDFColorCalculations.m in Sources */,
-				0BDAE3D81CECC649003323B9 /* NSArray+MDFUtils.m in Sources */,
-				0BDAE3DA1CECD231003323B9 /* MDFImageCalculations.m in Sources */,
+				6D47A3DC21F9F31100572484 /* MDFColorCalculations.m in Sources */,
+				6D47A3E221F9F31900572484 /* MDFTextAccessibility.m in Sources */,
+				6D47A3E021F9F31100572484 /* NSArray+MDFUtils.m in Sources */,
+				6D47A3DE21F9F31100572484 /* MDFImageCalculations.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0BDAE3DC1CECD3A6003323B9 /* Sources */ = {
+		6D47A3E321F9F47700572484 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BF99E7A1CF4F39200E6F9B9 /* MDFTextAccessibilityUnitTests.swift in Sources */,
+				6D47A3F621F9F48C00572484 /* MDFTextAccessibilityUnitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0BDAE3E71CECD3A6003323B9 /* PBXTargetDependency */ = {
+		6D47A3EE21F9F47700572484 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0B2890DE1CE2730C009E605A /* MDFTextAccessibility */;
-			targetProxy = 0BDAE3E61CECD3A6003323B9 /* PBXContainerItemProxy */;
+			target = 6D47A3D121F9F2E500572484 /* MDFTextAccessibility */;
+			targetProxy = 6D47A3ED21F9F47700572484 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -291,8 +305,33 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				WARNING_CFLAGS = "-Wall";
@@ -303,40 +342,82 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
 		};
-		0B2890E71CE2730C009E605A /* Debug */ = {
+		6D47A3D821F9F2E500572484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
-				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -349,50 +430,66 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = src/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = src/module.modulemap;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		0B2890E81CE2730C009E605A /* Release */ = {
+		6D47A3D921F9F2E500572484 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_CODE_COVERAGE = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -400,47 +497,61 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				INFOPLIST_FILE = src/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = src/module.modulemap;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibility;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "tests/unit/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		0BDAE3E91CECD3A6003323B9 /* Debug */ = {
+		6D47A3F021F9F47700572484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -454,49 +565,60 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = tests/unit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				INFOPLIST_FILE = tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibilityUnitTests;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibilityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_INCLUDE_PATHS = src;
-				SWIFT_OBJC_BRIDGING_HEADER = "src/MDFTextAccessibility-Bridging-Header.h";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		0BDAE3EA1CECD3A6003323B9 /* Release */ = {
+		6D47A3F121F9F47700572484 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B96D67A1D5CD06100491BDC /* MDFTextAccessibility.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -504,20 +626,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = tests/unit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				INFOPLIST_FILE = tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibilityUnitTests;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.MDFTextAccessibilityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				SWIFT_INCLUDE_PATHS = src;
-				SWIFT_OBJC_BRIDGING_HEADER = "src/MDFTextAccessibility-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -534,20 +653,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0B2890E61CE2730C009E605A /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */ = {
+		6D47A3D721F9F2E500572484 /* Build configuration list for PBXNativeTarget "MDFTextAccessibility" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0B2890E71CE2730C009E605A /* Debug */,
-				0B2890E81CE2730C009E605A /* Release */,
+				6D47A3D821F9F2E500572484 /* Debug */,
+				6D47A3D921F9F2E500572484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0BDAE3E81CECD3A6003323B9 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilityUnitTests" */ = {
+		6D47A3EF21F9F47700572484 /* Build configuration list for PBXNativeTarget "MDFTextAccessibilityTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0BDAE3E91CECD3A6003323B9 /* Debug */,
-				0BDAE3EA1CECD3A6003323B9 /* Release */,
+				6D47A3F021F9F47700572484 /* Debug */,
+				6D47A3F121F9F47700572484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
