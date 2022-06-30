@@ -17,7 +17,6 @@
 #import "MDFTextAccessibility.h"
 
 #import "MDFColorCalculations.h"
-#import "MDFImageCalculations.h"
 #import "NSArray+MDFUtils.h"
 
 static const CGFloat kMinContrastRatioNormalText = 4.5f;
@@ -37,20 +36,6 @@ static const CGFloat kMinContrastRatioLargeTextEnhanced = 4.5f;
   return [self textColorOnBackgroundColor:backgroundColor
                           targetTextAlpha:targetTextAlpha
                                   options:options];
-}
-
-+ (nullable UIColor *)textColorOnBackgroundImage:(nonnull UIImage *)backgroundImage
-                                        inRegion:(CGRect)region
-                                 targetTextAlpha:(CGFloat)targetTextAlpha
-                                            font:(nullable UIFont *)font {
-  UIColor *backgroundColor = MDFAverageColorOfOpaqueImage(backgroundImage, region);
-  if (!backgroundColor) {
-    return nil;
-  }
-
-  return [self textColorOnBackgroundColor:backgroundColor
-                          targetTextAlpha:targetTextAlpha
-                                     font:font];
 }
 
 + (nullable UIColor *)textColorOnBackgroundColor:(nonnull UIColor *)backgroundColor

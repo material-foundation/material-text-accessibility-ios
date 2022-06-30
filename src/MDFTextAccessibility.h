@@ -60,33 +60,6 @@ typedef NS_OPTIONS(NSUInteger, MDFTextAccessibilityOptions) {
                                 targetTextAlpha:(CGFloat)targetTextAlpha
                                            font:(nullable UIFont *)font;
 
-/**
- An optionally transparent text color suitable for displaying on a background image with a
- particular font.
-
- The color returned will be white or black with an alpha value of targetTextAlpha, unless the
- contrast ratio is insufficient, in which case the alpha is increased (made more opaque).
-
- If the passed font is nil, then a conservative guess is used.
-
- The content of the background image is simply averaged to make an average color, which is then used
- as if it were the background color of the text. Depending on the contents of the image, this
- approximation may or may not result in legible text.
-
- The supplied image region will be intersected with the image's bounds. If the resulting region is
- null or empty then this method returns nil.
-
- @param backgroundImage The opaque background image the text will be displayed on.
- @param region The region in which the text will be displayed. Can be conservatively large.
- @param targetTextAlpha The target alpha of the text.
- @param font The font to be used to display the text. Can be nil.
- @return A color with acceptable contrast ratio, or nil if the region is out of bounds of the image.
- */
-+ (nullable UIColor *)textColorOnBackgroundImage:(nonnull UIImage *)backgroundImage
-                                        inRegion:(CGRect)region
-                                 targetTextAlpha:(CGFloat)targetTextAlpha
-                                            font:(nullable UIFont *)font;
-
 #pragma mark Advanced methods
 
 /**
